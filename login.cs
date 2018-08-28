@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Runtime.InteropServices;
+using MySql.Data.MySqlClient;
 
 namespace xtremgym
 {
@@ -17,6 +18,9 @@ namespace xtremgym
         {
             InitializeComponent();
         }
+        Conexion Con = new Conexion();
+        
+        
 
         [DllImport("user32.DLL", EntryPoint = "ReleaseCapture")]
         private extern static void ReleaseCapture();
@@ -30,14 +34,28 @@ namespace xtremgym
 
         private void button1_Click(object sender, EventArgs e)
         {
-            validar();
+            if (!string.IsNullOrEmpty(txtUser.Text) && !string.IsNullOrEmpty(txtContra.Text)) 
+            {
+                validar();
+            }
+            else
+            {
+                MessageBox.Show("Campos vacios verifica");
+            }
+            
         }
         private void validar()
         {
+            MySqlConnection Co = Con.Con();
+            Co.Open();
+
             try
             {
+                
                 string user = txtUser.Text;
                 string contra = txtContra.Text;
+                MySqlDataReader Read = Con.Select("SELECT IDLogin FROM login WHERE UserName = '"+user+"' AND pwd ='"+contra+"'; ",Co).ExecuteReader();
+                /*
                 if (user == "hola" && contra == "contra")
                 {
                     this.Hide();
@@ -47,11 +65,25 @@ namespace xtremgym
                 else
                 {
                     MessageBox.Show("Los datos ingresados son incorrectos","Error al iniciar sesion", MessageBoxButtons.OK,MessageBoxIcon.Error);
+                }*/
+                if(Read.HasRows)
+                {
+                    Co.Close();
+                    this.Hide();
+                    Form1 frm = new Form1();
+                    frm.Show();
+                }
+                else
+                {
+                    Co.Close();
+                    MessageBox.Show("Los datos ingresados son incorrectos", "Error al iniciar sesion", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
             }
             catch (Exception ex)
             {
+                Co.Close();
                 MessageBox.Show("Ocurrio un erro: " + ex.ToString(),"Error inesperado" , MessageBoxButtons.OK , MessageBoxIcon.Error);
+                
             }
         }
 

@@ -16,3 +16,24 @@ C:\Users\carlos\documents\visual studio 2015\Projects\xtremgym\xtremgym\obj\Debu
 C:\Users\carlos\documents\visual studio 2015\Projects\xtremgym\xtremgym\obj\Debug\xtremgym.frmNuevaMembresia.resources
 C:\Users\carlos\documents\visual studio 2015\Projects\xtremgym\xtremgym\obj\Debug\xtremgym.frmNusuarios.resources
 C:\Users\carlos\documents\visual studio 2015\Projects\xtremgym\xtremgym\obj\Debug\xtremgym.login.resources
+C:\Users\Novato\Desktop\Proyecto\gimnasio\bin\Debug\xtremgym.exe.config
+C:\Users\Novato\Desktop\Proyecto\gimnasio\obj\Debug\xtremgym.exe
+C:\Users\Novato\Desktop\Proyecto\gimnasio\obj\Debug\xtremgym.pdb
+C:\Users\Novato\Desktop\Proyecto\gimnasio\bin\Debug\xtremgym.exe
+C:\Users\Novato\Desktop\Proyecto\gimnasio\bin\Debug\xtremgym.pdb
+C:\Users\Novato\Desktop\Proyecto\gimnasio\obj\Debug\xtremgym.csprojResolveAssemblyReference.cache
+C:\Users\Novato\Desktop\Proyecto\gimnasio\obj\Debug\xtremgym.Form1.resources
+C:\Users\Novato\Desktop\Proyecto\gimnasio\obj\Debug\xtremgym.frmCliente.resources
+C:\Users\Novato\Desktop\Proyecto\gimnasio\obj\Debug\xtremgym.frmClientes.resources
+C:\Users\Novato\Desktop\Proyecto\gimnasio\obj\Debug\xtremgym.frmMembresia.resources
+C:\Users\Novato\Desktop\Proyecto\gimnasio\obj\Debug\xtremgym.frmNuevaMembresia.resources
+C:\Users\Novato\Desktop\Proyecto\gimnasio\obj\Debug\xtremgym.frmNusuarios.resources
+C:\Users\Novato\Desktop\Proyecto\gimnasio\obj\Debug\xtremgym.frmPagos.resources
+C:\Users\Novato\Desktop\Proyecto\gimnasio\obj\Debug\xtremgym.frmReportes.resources
+C:\Users\Novato\Desktop\Proyecto\gimnasio\obj\Debug\xtremgym.frmUsuarios.resources
+C:\Users\Novato\Desktop\Proyecto\gimnasio\obj\Debug\xtremgym.login.resources
+C:\Users\Novato\Desktop\Proyecto\gimnasio\obj\Debug\xtremgym.Properties.Resources.resources
+C:\Users\Novato\Desktop\Proyecto\gimnasio\obj\Debug\xtremgym.csproj.GenerateResource.Cache
+C:\Users\Novato\Desktop\Proyecto\gimnasio\bin\Debug\MySql.Data.dll
+C:\Users\Novato\Desktop\Proyecto\gimnasio\bin\Debug\Google.Protobuf.dll
+C:\Users\Novato\Desktop\Proyecto\gimnasio\bin\Debug\MySql.Data.xml

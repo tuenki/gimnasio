@@ -36,8 +36,6 @@
             this.button2 = new System.Windows.Forms.Button();
             this.btnNuevoS = new System.Windows.Forms.Button();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.Username = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Pass = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -109,23 +107,10 @@
             // 
             this.dataGridView1.BackgroundColor = System.Drawing.Color.LightSteelBlue;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.Username,
-            this.Pass});
             this.dataGridView1.Location = new System.Drawing.Point(26, 118);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.Size = new System.Drawing.Size(443, 322);
             this.dataGridView1.TabIndex = 9;
-            // 
-            // Username
-            // 
-            this.Username.HeaderText = "Usuario";
-            this.Username.Name = "Username";
-            // 
-            // Pass
-            // 
-            this.Pass.HeaderText = "Pasword";
-            this.Pass.Name = "Pass";
             // 
             // frmUsuarios
             // 
@@ -160,7 +145,5 @@
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Button btnNuevoS;
         private System.Windows.Forms.DataGridView dataGridView1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Username;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Pass;
     }
 }

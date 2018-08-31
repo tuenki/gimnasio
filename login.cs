@@ -35,7 +35,7 @@ namespace xtremgym
         private void button1_Click(object sender, EventArgs e)
         {
 
-            CNEmpleado objEmpleado = new CNEmpleado();
+            CNUsuario objEmpleado = new CNUsuario();
             SqlDataReader Logear;
             objEmpleado.Usuario = txtUser.Text;
             objEmpleado.Contrasenia = txtContra.Text;

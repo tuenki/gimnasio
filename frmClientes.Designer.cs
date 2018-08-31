@@ -63,7 +63,7 @@
             // 
             // btnNuevoS
             // 
-            this.btnNuevoS.Location = new System.Drawing.Point(505, 116);
+            this.btnNuevoS.Location = new System.Drawing.Point(505, 128);
             this.btnNuevoS.Name = "btnNuevoS";
             this.btnNuevoS.Size = new System.Drawing.Size(75, 23);
             this.btnNuevoS.TabIndex = 2;
@@ -73,7 +73,7 @@
             // 
             // button2
             // 
-            this.button2.Location = new System.Drawing.Point(505, 158);
+            this.button2.Location = new System.Drawing.Point(505, 285);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(75, 23);
             this.button2.TabIndex = 3;
@@ -83,7 +83,7 @@
             // 
             // button3
             // 
-            this.button3.Location = new System.Drawing.Point(505, 198);
+            this.button3.Location = new System.Drawing.Point(505, 314);
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(75, 23);
             this.button3.TabIndex = 4;
@@ -132,6 +132,7 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "frmClientes";
             this.Text = "frmClientes";
+            this.Load += new System.EventHandler(this.frmClientes_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

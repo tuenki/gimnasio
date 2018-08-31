@@ -37,5 +37,10 @@ namespace xtremgym
         {
             this.Close();
         }
+
+        private void frmPagos_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using GYMDatos;
 
 namespace xtremgym
 {
@@ -32,6 +33,18 @@ namespace xtremgym
         {
             frmPagos frp = new frmPagos();
             frp.Show();
+        }
+
+        private void frmClientes_Load(object sender, EventArgs e)
+        {
+            MostrarClient();
+        }
+        private void MostrarClient()
+        {
+            CDUsuario ObjCliente = new CDUsuario();
+            dataGridView1.DataSource = ObjCliente.MostrarClientes();
+            dataGridView1.Columns["IDUsuario"].Visible = false;
+            dataGridView1.Columns["IDSuscripcion"].Visible = false;
         }
     }
 }

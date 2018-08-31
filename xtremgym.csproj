@@ -165,6 +165,10 @@
     <WCFMetadata Include="Service References\" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\GYMDatos\GYMDatos.csproj">
+      <Project>{82df3c30-a4b5-4e15-a62e-83bf7be8ee7e}</Project>
+      <Name>GYMDatos</Name>
+    </ProjectReference>
     <ProjectReference Include="GYMNegocio\GYMNegocio.csproj">
       <Project>{22b521f9-5315-44b3-98d4-c9c18ad65fd3}</Project>
       <Name>GYMNegocio</Name>

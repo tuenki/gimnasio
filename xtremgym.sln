@@ -3,7 +3,11 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 14
 VisualStudioVersion = 14.0.25420.1
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "xtremgym", "xtremgym\xtremgym.csproj", "{0C5C2F45-BE2B-4CFF-90FE-C45553E5929D}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "xtremgym", "xtremgym.csproj", "{0C5C2F45-BE2B-4CFF-90FE-C45553E5929D}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GYMDatos", "..\GYMDatos\GYMDatos.csproj", "{82DF3C30-A4B5-4E15-A62E-83BF7BE8EE7E}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GYMNegocio", "GYMNegocio\GYMNegocio.csproj", "{22B521F9-5315-44B3-98D4-C9C18AD65FD3}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -15,6 +19,14 @@ Global
 		{0C5C2F45-BE2B-4CFF-90FE-C45553E5929D}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{0C5C2F45-BE2B-4CFF-90FE-C45553E5929D}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{0C5C2F45-BE2B-4CFF-90FE-C45553E5929D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{82DF3C30-A4B5-4E15-A62E-83BF7BE8EE7E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{82DF3C30-A4B5-4E15-A62E-83BF7BE8EE7E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{82DF3C30-A4B5-4E15-A62E-83BF7BE8EE7E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{82DF3C30-A4B5-4E15-A62E-83BF7BE8EE7E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{22B521F9-5315-44B3-98D4-C9C18AD65FD3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{22B521F9-5315-44B3-98D4-C9C18AD65FD3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{22B521F9-5315-44B3-98D4-C9C18AD65FD3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{22B521F9-5315-44B3-98D4-C9C18AD65FD3}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

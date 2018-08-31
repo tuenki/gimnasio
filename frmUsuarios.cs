@@ -7,7 +7,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using MySql.Data.MySqlClient;
+using GYMDatos;
+
 namespace xtremgym
 {
     public partial class frmUsuarios : Form
@@ -32,7 +33,13 @@ namespace xtremgym
         private void frmUsuarios_Load(object sender, EventArgs e)
         {
             //Cargar Grid
-            
+            CargarClientes();
+        }
+        private void CargarClientes()
+        {
+            CDUsuario ObjEmpleado = new CDUsuario();
+            dataGridView1.DataSource = ObjEmpleado.MostrarEmpleados();
+
         }
         
     }

@@ -40,12 +40,12 @@
             this.button1 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
             this.GExistente = new System.Windows.Forms.GroupBox();
+            this.CBNombre = new System.Windows.Forms.ComboBox();
             this.GNuevo = new System.Windows.Forms.GroupBox();
             this.txtpwd = new System.Windows.Forms.TextBox();
             this.label6 = new System.Windows.Forms.Label();
             this.radioButton1 = new System.Windows.Forms.RadioButton();
             this.radioButton2 = new System.Windows.Forms.RadioButton();
-            this.CBNombre = new System.Windows.Forms.ComboBox();
             this.GExistente.SuspendLayout();
             this.GNuevo.SuspendLayout();
             this.SuspendLayout();
@@ -163,6 +163,14 @@
             this.GExistente.Visible = false;
             this.GExistente.Enter += new System.EventHandler(this.groupBox1_Enter);
             // 
+            // CBNombre
+            // 
+            this.CBNombre.FormattingEnabled = true;
+            this.CBNombre.Location = new System.Drawing.Point(83, 51);
+            this.CBNombre.Name = "CBNombre";
+            this.CBNombre.Size = new System.Drawing.Size(178, 21);
+            this.CBNombre.TabIndex = 0;
+            // 
             // GNuevo
             // 
             this.GNuevo.Controls.Add(this.textBox1);
@@ -220,14 +228,6 @@
             this.radioButton2.Text = "Nuevo";
             this.radioButton2.UseVisualStyleBackColor = true;
             // 
-            // CBNombre
-            // 
-            this.CBNombre.FormattingEnabled = true;
-            this.CBNombre.Location = new System.Drawing.Point(83, 51);
-            this.CBNombre.Name = "CBNombre";
-            this.CBNombre.Size = new System.Drawing.Size(178, 21);
-            this.CBNombre.TabIndex = 0;
-            // 
             // frmNusuarios
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -247,6 +247,7 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "frmNusuarios";
             this.Text = "frmNusuarios";
+            this.Load += new System.EventHandler(this.frmNusuarios_Load);
             this.GExistente.ResumeLayout(false);
             this.GNuevo.ResumeLayout(false);
             this.GNuevo.PerformLayout();

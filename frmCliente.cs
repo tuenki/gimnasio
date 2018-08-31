@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using GYMNegocio;
 
 namespace xtremgym
 {
@@ -19,14 +20,34 @@ namespace xtremgym
 
         private void button1_Click(object sender, EventArgs e)
         {
-            frmPagos frmp = new frmPagos();
+            NuevoUsuario();
+           /* frmPagos frmp = new frmPagos();
             this.Close();
-            frmp.Show();
+            frmp.Show();*/
         }
 
         private void button2_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+        private void NuevoUsuario()
+        {
+            CNUsuario ObjNu = new CNUsuario();
+            ObjNu.Nombre = txtNombre.Text;
+            ObjNu.ApellidoP = txtApellidoP.Text;
+            ObjNu.ApellidoM = txtApellidoM.Text;
+            if(ObjNu.Nombre == txtNombre.Text)
+            {
+                if(ObjNu.ApellidoP == txtApellidoP.Text)
+                {
+                    if(ObjNu.ApellidoM == txtApellidoM.Text)
+                    {
+                        ObjNu.NuevoUsuario();
+                        MessageBox.Show("Se ingreso correctamente");
+                    }
+                }
+            }
+
         }
     }
 }

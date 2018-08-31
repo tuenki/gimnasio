@@ -7,7 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using MySql.Data.MySqlClient;
+using GYMDatos;
 
 namespace xtremgym
 {
@@ -48,6 +48,14 @@ namespace xtremgym
 
             }
         }
+        private void ListaUsuarios()
+        {
+            CDUsuario LUs = new CDUsuario();
+            CBNombre.DataSource = LUs.ListaUsuarios();
+            CBNombre.DisplayMember = "Nombre";
+            CBNombre.ValueMember = "IDUsuario";
+
+        }
         
         
         
@@ -55,6 +63,11 @@ namespace xtremgym
         private void button1_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void frmNusuarios_Load(object sender, EventArgs e)
+        {
+            ListaUsuarios();
         }
     }
 }

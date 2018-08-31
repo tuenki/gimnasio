@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 using GYMDatos;
 using System.Data.SqlClient;
 using System.Data;
+using System.Security.Cryptography;
 namespace GYMNegocio
 {
     public class CNUsuario
@@ -80,6 +81,13 @@ namespace GYMNegocio
             objDato.ApellidoP = ApellidoP;
             objDato.ApellidoM = ApellidoM;
             objDato.NuevoUsuario();
+        }
+        public string EncriptarPass()
+        {
+            MD5 md5 = MD5.Create();
+            //byte[] inputbyte = Encoding.ASCII.get
+            //een proceso
+            return Contrasenia;
         }
 
     }

@@ -8,7 +8,8 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Runtime.InteropServices;
-using MySql.Data.MySqlClient;
+using GYMNegocio;
+using System.Data.SqlClient;
 
 namespace xtremgym
 {
@@ -18,7 +19,6 @@ namespace xtremgym
         {
             InitializeComponent();
         }
-        Conexion Con = new Conexion();
         
         
 
@@ -34,58 +34,40 @@ namespace xtremgym
 
         private void button1_Click(object sender, EventArgs e)
         {
-            if (!string.IsNullOrEmpty(txtUser.Text) && !string.IsNullOrEmpty(txtContra.Text)) 
+
+            CNEmpleado objEmpleado = new CNEmpleado();
+            SqlDataReader Logear;
+            objEmpleado.Usuario = txtUser.Text;
+            objEmpleado.Contrasenia = txtContra.Text;
+            if(objEmpleado.Usuario == txtUser.Text)
             {
-                validar();
+                if (objEmpleado.Contrasenia == txtContra.Text)
+                {
+                    Logear = objEmpleado.IniciarSesion();
+                    if (Logear.Read() == true)
+                    {
+                        this.Hide();
+                        Form1 ObjFP = new Form1();
+                        ObjFP.Show();
+                    }
+                    else
+                        MessageBox.Show("Datos Incorrectos");
+                }
+                else
+                {
+                    MessageBox.Show(objEmpleado.Contrasenia);
+                }
+               
             }
             else
             {
-                MessageBox.Show("Campos vacios verifica");
+                MessageBox.Show(objEmpleado.Usuario);
             }
             
-        }
-        private void validar()
-        {
-            MySqlConnection Co = Con.Con();
-            Co.Open();
 
-            try
-            {
-                
-                string user = txtUser.Text;
-                string contra = txtContra.Text;
-                MySqlDataReader Read = Con.Select("SELECT IDLogin FROM login WHERE UserName = '"+user+"' AND pwd ='"+contra+"'; ",Co).ExecuteReader();
-                /*
-                if (user == "hola" && contra == "contra")
-                {
-                    this.Hide();
-                    Form1 frm = new Form1();
-                    frm.Show();
-                }
-                else
-                {
-                    MessageBox.Show("Los datos ingresados son incorrectos","Error al iniciar sesion", MessageBoxButtons.OK,MessageBoxIcon.Error);
-                }*/
-                if(Read.HasRows)
-                {
-                    Co.Close();
-                    this.Hide();
-                    Form1 frm = new Form1();
-                    frm.Show();
-                }
-                else
-                {
-                    Co.Close();
-                    MessageBox.Show("Los datos ingresados son incorrectos", "Error al iniciar sesion", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                }
-            }
-            catch (Exception ex)
-            {
-                Co.Close();
-                MessageBox.Show("Ocurrio un erro: " + ex.ToString(),"Error inesperado" , MessageBoxButtons.OK , MessageBoxIcon.Error);
-                
-            }
+
         }
+        
 
         private void txtContra_KeyDown(object sender, KeyEventArgs e)
         {

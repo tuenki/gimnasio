@@ -7,7 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-
+using MySql.Data.MySqlClient;
 namespace xtremgym
 {
     public partial class frmUsuarios : Form
@@ -28,5 +28,12 @@ namespace xtremgym
             frmNusuarios frmu = new frmNusuarios();
             frmu.Show();
         }
+
+        private void frmUsuarios_Load(object sender, EventArgs e)
+        {
+            //Cargar Grid
+            
+        }
+        
     }
 }

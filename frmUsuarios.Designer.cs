@@ -36,6 +36,8 @@
             this.button2 = new System.Windows.Forms.Button();
             this.btnNuevoS = new System.Windows.Forms.Button();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.Username = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Pass = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -51,16 +53,16 @@
             // 
             // button5
             // 
-            this.button5.Location = new System.Drawing.Point(485, 417);
+            this.button5.Location = new System.Drawing.Point(485, 391);
             this.button5.Name = "button5";
-            this.button5.Size = new System.Drawing.Size(75, 23);
+            this.button5.Size = new System.Drawing.Size(75, 49);
             this.button5.TabIndex = 15;
             this.button5.Text = "Cerrar";
             this.button5.UseVisualStyleBackColor = true;
             // 
             // button4
             // 
-            this.button4.Location = new System.Drawing.Point(394, 70);
+            this.button4.Location = new System.Drawing.Point(284, 89);
             this.button4.Name = "button4";
             this.button4.Size = new System.Drawing.Size(75, 23);
             this.button4.TabIndex = 14;
@@ -76,18 +78,18 @@
             // 
             // button3
             // 
-            this.button3.Location = new System.Drawing.Point(485, 181);
+            this.button3.Location = new System.Drawing.Point(485, 237);
             this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(75, 23);
+            this.button3.Size = new System.Drawing.Size(75, 52);
             this.button3.TabIndex = 12;
             this.button3.Text = "Eliminar";
             this.button3.UseVisualStyleBackColor = true;
             // 
             // button2
             // 
-            this.button2.Location = new System.Drawing.Point(485, 141);
+            this.button2.Location = new System.Drawing.Point(485, 179);
             this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(75, 23);
+            this.button2.Size = new System.Drawing.Size(75, 52);
             this.button2.TabIndex = 11;
             this.button2.Text = "Editar";
             this.button2.UseVisualStyleBackColor = true;
@@ -95,9 +97,9 @@
             // 
             // btnNuevoS
             // 
-            this.btnNuevoS.Location = new System.Drawing.Point(485, 99);
+            this.btnNuevoS.Location = new System.Drawing.Point(485, 126);
             this.btnNuevoS.Name = "btnNuevoS";
-            this.btnNuevoS.Size = new System.Drawing.Size(75, 23);
+            this.btnNuevoS.Size = new System.Drawing.Size(75, 46);
             this.btnNuevoS.TabIndex = 10;
             this.btnNuevoS.Text = "Nuevo";
             this.btnNuevoS.UseVisualStyleBackColor = true;
@@ -107,10 +109,23 @@
             // 
             this.dataGridView1.BackgroundColor = System.Drawing.Color.LightSteelBlue;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.Username,
+            this.Pass});
             this.dataGridView1.Location = new System.Drawing.Point(26, 118);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.Size = new System.Drawing.Size(443, 322);
             this.dataGridView1.TabIndex = 9;
+            // 
+            // Username
+            // 
+            this.Username.HeaderText = "Usuario";
+            this.Username.Name = "Username";
+            // 
+            // Pass
+            // 
+            this.Pass.HeaderText = "Pasword";
+            this.Pass.Name = "Pass";
             // 
             // frmUsuarios
             // 
@@ -128,6 +143,7 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "frmUsuarios";
             this.Text = "frmUsuarios";
+            this.Load += new System.EventHandler(this.frmUsuarios_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -144,5 +160,7 @@
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Button btnNuevoS;
         private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Username;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Pass;
     }
 }

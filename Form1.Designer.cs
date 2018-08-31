@@ -128,7 +128,7 @@
             this.btnClientes.Name = "btnClientes";
             this.btnClientes.Size = new System.Drawing.Size(235, 40);
             this.btnClientes.TabIndex = 1;
-            this.btnClientes.Text = "Socios";
+            this.btnClientes.Text = "Clientes";
             this.btnClientes.UseVisualStyleBackColor = true;
             this.btnClientes.Click += new System.EventHandler(this.btnClientes_Click);
             // 

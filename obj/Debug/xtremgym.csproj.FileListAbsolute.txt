@@ -38,6 +38,6 @@ C:\Users\Novato\Desktop\Proyecto\gimnasio\bin\Debug\MySql.Data.dll
 C:\Users\Novato\Desktop\Proyecto\gimnasio\bin\Debug\Google.Protobuf.dll
 C:\Users\Novato\Desktop\Proyecto\gimnasio\bin\Debug\MySql.Data.xml
 C:\Users\Novato\Desktop\Proyecto\gimnasio\bin\Debug\GYMNegocio.dll
-C:\Users\Novato\Desktop\Proyecto\gimnasio\bin\Debug\GYMDatos.dll
 C:\Users\Novato\Desktop\Proyecto\gimnasio\bin\Debug\GYMNegocio.pdb
 C:\Users\Novato\Desktop\Proyecto\gimnasio\bin\Debug\GYMDatos.pdb
+C:\Users\Novato\Desktop\Proyecto\gimnasio\bin\Debug\GYMDatos.dll

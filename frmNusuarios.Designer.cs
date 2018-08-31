@@ -46,6 +46,7 @@
             this.label6 = new System.Windows.Forms.Label();
             this.radioButton1 = new System.Windows.Forms.RadioButton();
             this.radioButton2 = new System.Windows.Forms.RadioButton();
+            this.CBCargo = new System.Windows.Forms.ComboBox();
             this.GExistente.SuspendLayout();
             this.GNuevo.SuspendLayout();
             this.SuspendLayout();
@@ -156,7 +157,7 @@
             this.GExistente.Controls.Add(this.CBNombre);
             this.GExistente.Location = new System.Drawing.Point(26, 114);
             this.GExistente.Name = "GExistente";
-            this.GExistente.Size = new System.Drawing.Size(344, 116);
+            this.GExistente.Size = new System.Drawing.Size(344, 131);
             this.GExistente.TabIndex = 11;
             this.GExistente.TabStop = false;
             this.GExistente.Text = "Existente";
@@ -181,7 +182,7 @@
             this.GNuevo.Controls.Add(this.textBox3);
             this.GNuevo.Location = new System.Drawing.Point(26, 114);
             this.GNuevo.Name = "GNuevo";
-            this.GNuevo.Size = new System.Drawing.Size(344, 175);
+            this.GNuevo.Size = new System.Drawing.Size(344, 142);
             this.GNuevo.TabIndex = 12;
             this.GNuevo.TabStop = false;
             this.GNuevo.Text = "Nuevo";
@@ -228,11 +229,21 @@
             this.radioButton2.Text = "Nuevo";
             this.radioButton2.UseVisualStyleBackColor = true;
             // 
+            // CBCargo
+            // 
+            this.CBCargo.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.CBCargo.FormattingEnabled = true;
+            this.CBCargo.Location = new System.Drawing.Point(137, 268);
+            this.CBCargo.Name = "CBCargo";
+            this.CBCargo.Size = new System.Drawing.Size(198, 21);
+            this.CBCargo.TabIndex = 17;
+            // 
             // frmNusuarios
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(401, 460);
+            this.Controls.Add(this.CBCargo);
             this.Controls.Add(this.radioButton2);
             this.Controls.Add(this.GNuevo);
             this.Controls.Add(this.radioButton1);
@@ -276,5 +287,6 @@
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.RadioButton radioButton1;
         private System.Windows.Forms.RadioButton radioButton2;
+        private System.Windows.Forms.ComboBox CBCargo;
     }
 }

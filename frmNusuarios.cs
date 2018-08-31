@@ -8,11 +8,13 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using GYMDatos;
+using GYMNegocio;
 
 namespace xtremgym
 {
     public partial class frmNusuarios : Form
     {
+        CNUsuario ObjUs = new CNUsuario();
         public frmNusuarios()
         {
             InitializeComponent();
@@ -33,6 +35,7 @@ namespace xtremgym
             if(radioButton1.Checked == true)
             {
                 // Existente
+                ListaUsuarios();
                 GExistente.Visible = true;
                 GNuevo.Visible = false;
                 txtuser.ReadOnly = false;
@@ -62,12 +65,27 @@ namespace xtremgym
 
         private void button1_Click(object sender, EventArgs e)
         {
-
+            NuevoLogin();
         }
 
         private void frmNusuarios_Load(object sender, EventArgs e)
         {
-            ListaUsuarios();
+            ListaCargo();
+        }
+        private void ListaCargo()
+        {
+            CDUsuario LCar = new CDUsuario();
+            CBCargo.DataSource = LCar.ListaCargos();
+            CBCargo.DisplayMember = "NombreCargo";
+            CBCargo.ValueMember = "IDCargo";
+        }
+        private void NuevoLogin()
+        {
+            ObjUs.IDUsuario = Convert.ToInt32(CBNombre.SelectedValue);
+            ObjUs.Cargo = Convert.ToInt32(CBCargo.SelectedValue);
+            ObjUs.Usuario = txtuser.Text;
+            ObjUs.Contrasenia = txtpwd.Text;
+            ObjUs.NuevoLogin();
         }
     }
 }

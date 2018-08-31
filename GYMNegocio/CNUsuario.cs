@@ -24,6 +24,13 @@ namespace GYMNegocio
         private String _ApellidoM;
         private int _IDCliente;
         private int _IDUsuario;
+        private int _Cargo;
+
+        public int Cargo
+        {
+            set { _Cargo = value; }
+            get { return _Cargo; }
+        }
 
         public string Nombre
         {
@@ -65,12 +72,16 @@ namespace GYMNegocio
                 else { _Contrasenia = value;} }
             get { return _Contrasenia; }
         }
+
+        
+
         public CNUsuario() { }
 
         public SqlDataReader IniciarSesion()
         {
             SqlDataReader Logear;
             objDato.Usuario = Usuario;
+            EncriptarPass();
             objDato.Pass = Contrasenia;
             Logear = objDato.IniciarSesion();
             return Logear;
@@ -82,12 +93,24 @@ namespace GYMNegocio
             objDato.ApellidoM = ApellidoM;
             objDato.NuevoUsuario();
         }
-        public string EncriptarPass()
+        public void NuevoLogin()
         {
-            MD5 md5 = MD5.Create();
-            //byte[] inputbyte = Encoding.ASCII.get
-            //een proceso
-            return Contrasenia;
+            objDato.IDUsuario = IDUsuario;
+            objDato.Usuario = Usuario;
+            EncriptarPass();
+            objDato.Pass = Contrasenia;
+            objDato.Cargo = Cargo;
+            objDato.NuevoLogin();
+
+        }
+        public void EncriptarPass()
+        {
+            var bytes = Encoding.UTF8.GetBytes(Contrasenia);
+            using (SHA512 Sham = new SHA512Managed())
+            { 
+                Contrasenia = Convert.ToBase64String(bytes);
+            }
+            
         }
 
     }

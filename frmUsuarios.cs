@@ -22,6 +22,7 @@ namespace xtremgym
         {
             frmNusuarios frmu = new frmNusuarios();
             frmu.Show();
+            CargarClientes();
         }
 
         private void button2_Click(object sender, EventArgs e)

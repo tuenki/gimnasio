@@ -1,0 +1,5 @@
+C:\Users\carlos\Desktop\gym\xtremgym\gimnasio-master\GYMDatos\bin\Debug\GYMDatos.dll
+C:\Users\carlos\Desktop\gym\xtremgym\gimnasio-master\GYMDatos\bin\Debug\GYMDatos.pdb
+C:\Users\carlos\Desktop\gym\xtremgym\gimnasio-master\GYMDatos\obj\Debug\GYMDatos.csprojResolveAssemblyReference.cache
+C:\Users\carlos\Desktop\gym\xtremgym\gimnasio-master\GYMDatos\obj\Debug\GYMDatos.dll
+C:\Users\carlos\Desktop\gym\xtremgym\gimnasio-master\GYMDatos\obj\Debug\GYMDatos.pdb

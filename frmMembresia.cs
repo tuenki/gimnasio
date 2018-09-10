@@ -7,14 +7,11 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using GYMNegocio;
 
 namespace xtremgym
 {
     public partial class frmMembresia : Form
     {
-        CNMembresia objectCN = new CNMembresia();
-
         public frmMembresia()
         {
             InitializeComponent();
@@ -31,16 +28,5 @@ namespace xtremgym
             frmNuevaMembresia frmm = new frmNuevaMembresia();
             frmm.Show();
         }
-
-        private void frmMembresia_Load(object sender, EventArgs e)
-        {
-            ShowMembership();
-        }
-        
-        private void ShowMembership()
-        {
-            dataGridView1.DataSource = objectCN.ShowMembership();
-        }
-
     }
 }

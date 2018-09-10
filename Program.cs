@@ -8,6 +8,8 @@ namespace xtremgym
 {
     static class Program
     {
+
+        public static int IDUsuario;
         /// <summary>
         /// The main entry point for the application.
         /// </summary>

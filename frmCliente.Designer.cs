@@ -38,15 +38,9 @@
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.button1 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
-<<<<<<< HEAD
             this.btnborrar = new System.Windows.Forms.Button();
             this.labelcontador = new System.Windows.Forms.Label();
             this.labelAlert = new System.Windows.Forms.Label();
-=======
-            this.label5 = new System.Windows.Forms.Label();
-            this.label6 = new System.Windows.Forms.Label();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
->>>>>>> 00804115b4ef7d75933f62df29dd16dd34e8bc3a
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -92,46 +86,28 @@
             // 
             // txtNombre
             // 
-<<<<<<< HEAD
             this.txtNombre.Location = new System.Drawing.Point(105, 89);
-=======
-            this.txtNombre.Location = new System.Drawing.Point(105, 72);
->>>>>>> 00804115b4ef7d75933f62df29dd16dd34e8bc3a
             this.txtNombre.Name = "txtNombre";
             this.txtNombre.Size = new System.Drawing.Size(216, 20);
             this.txtNombre.TabIndex = 4;
             // 
             // txtApellidoP
             // 
-<<<<<<< HEAD
             this.txtApellidoP.Location = new System.Drawing.Point(150, 130);
-=======
-            this.txtApellidoP.Location = new System.Drawing.Point(150, 113);
->>>>>>> 00804115b4ef7d75933f62df29dd16dd34e8bc3a
             this.txtApellidoP.Name = "txtApellidoP";
             this.txtApellidoP.Size = new System.Drawing.Size(171, 20);
             this.txtApellidoP.TabIndex = 5;
             // 
             // txtApellidoM
             // 
-<<<<<<< HEAD
             this.txtApellidoM.Location = new System.Drawing.Point(153, 172);
-=======
-            this.txtApellidoM.Location = new System.Drawing.Point(153, 155);
->>>>>>> 00804115b4ef7d75933f62df29dd16dd34e8bc3a
             this.txtApellidoM.Name = "txtApellidoM";
             this.txtApellidoM.Size = new System.Drawing.Size(168, 20);
             this.txtApellidoM.TabIndex = 6;
             // 
             // pictureBox1
             // 
-<<<<<<< HEAD
             this.pictureBox1.Location = new System.Drawing.Point(350, 42);
-=======
-            this.pictureBox1.BackColor = System.Drawing.Color.White;
-            this.pictureBox1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.pictureBox1.Location = new System.Drawing.Point(350, 57);
->>>>>>> 00804115b4ef7d75933f62df29dd16dd34e8bc3a
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(131, 161);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -140,12 +116,8 @@
             // 
             // button1
             // 
-<<<<<<< HEAD
             this.button1.Enabled = false;
             this.button1.Location = new System.Drawing.Point(175, 287);
-=======
-            this.button1.Location = new System.Drawing.Point(153, 233);
->>>>>>> 00804115b4ef7d75933f62df29dd16dd34e8bc3a
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(75, 34);
             this.button1.TabIndex = 8;
@@ -155,11 +127,7 @@
             // 
             // button2
             // 
-<<<<<<< HEAD
             this.button2.Location = new System.Drawing.Point(268, 287);
-=======
-            this.button2.Location = new System.Drawing.Point(256, 233);
->>>>>>> 00804115b4ef7d75933f62df29dd16dd34e8bc3a
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(75, 34);
             this.button2.TabIndex = 9;
@@ -167,7 +135,6 @@
             this.button2.UseVisualStyleBackColor = true;
             this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
-<<<<<<< HEAD
             // btnborrar
             // 
             this.btnborrar.Enabled = false;
@@ -197,51 +164,15 @@
             this.labelAlert.Size = new System.Drawing.Size(47, 13);
             this.labelAlert.TabIndex = 12;
             this.labelAlert.Text = "Mensaje";
-=======
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(393, 206);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(47, 16);
-            this.label5.TabIndex = 10;
-            this.label5.Text = "Huella";
-            // 
-            // label6
-            // 
-            this.label6.AutoSize = true;
-            this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(62, 196);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(82, 18);
-            this.label6.TabIndex = 11;
-            this.label6.Text = "Membresia";
-            // 
-            // comboBox1
-            // 
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(153, 193);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(121, 21);
-            this.comboBox1.TabIndex = 12;
->>>>>>> 00804115b4ef7d75933f62df29dd16dd34e8bc3a
             // 
             // frmCliente
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-<<<<<<< HEAD
             this.ClientSize = new System.Drawing.Size(508, 344);
             this.Controls.Add(this.labelAlert);
             this.Controls.Add(this.labelcontador);
             this.Controls.Add(this.btnborrar);
-=======
-            this.ClientSize = new System.Drawing.Size(508, 281);
-            this.Controls.Add(this.comboBox1);
-            this.Controls.Add(this.label6);
-            this.Controls.Add(this.label5);
->>>>>>> 00804115b4ef7d75933f62df29dd16dd34e8bc3a
             this.Controls.Add(this.button2);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.pictureBox1);
@@ -254,7 +185,6 @@
             this.Controls.Add(this.label1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "frmCliente";
-            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "frmCliente";
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.frmCliente_FormClosed);
             this.Load += new System.EventHandler(this.frmCliente_Load);
@@ -275,15 +205,9 @@
         private System.Windows.Forms.TextBox txtApellidoM;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Button button2;
-<<<<<<< HEAD
         private System.Windows.Forms.Button btnborrar;
         private System.Windows.Forms.Label labelcontador;
         private System.Windows.Forms.Label labelAlert;
         public System.Windows.Forms.Button button1;
-=======
-        private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.ComboBox comboBox1;
->>>>>>> 00804115b4ef7d75933f62df29dd16dd34e8bc3a
     }
 }

@@ -47,6 +47,7 @@ namespace xtremgym
                     if (Logear.Read() == true)
                     {
                         this.Hide();
+                        Program.IDUsuario =Convert.ToInt32(Logear["IDUsuario"]);
                         Form1 ObjFP = new Form1();
                         ObjFP.Show();
                     }

@@ -204,7 +204,6 @@ namespace xtremgym
 
         }
 
-<<<<<<< HEAD
 
         private void OnTemplate2(DPFP.Template template)
         {
@@ -281,11 +280,6 @@ namespace xtremgym
         private void frmCliente_FormClosed(object sender, FormClosedEventArgs e)
         {
             Stop();
-=======
-        private void listBox1_SelectedIndexChanged(object sender, EventArgs e)
-        {
-
->>>>>>> 00804115b4ef7d75933f62df29dd16dd34e8bc3a
         }
     }
 }

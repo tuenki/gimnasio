@@ -71,6 +71,7 @@
             this.Controls.Add(this.label1);
             this.Name = "frmVeriTodasHuellas";
             this.Text = "frmVeriTodasHuellas";
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.frmVeriTodasHuellas_FormClosed);
             this.Load += new System.EventHandler(this.frmVeriTodasHuellas_Load);
             this.ResumeLayout(false);
             this.PerformLayout();

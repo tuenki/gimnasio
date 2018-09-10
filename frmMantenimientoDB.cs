@@ -19,12 +19,24 @@ namespace xtremgym
         private void btnCrearReslpado_Click(object sender, EventArgs e)
         {
             frmVerficarDedo VD = new frmVerficarDedo();
-            VD.IDUsuario = 7;
+            VD.IDUsuario = Program.IDUsuario;
             if(VD.ShowDialog() == DialogResult.OK)
             {
-                MessageBox.Show("Dedo correcto");
+                FolderBrowserDialog FBD = new FolderBrowserDialog();
+                if(FBD.ShowDialog() == DialogResult.OK)
+                {
+                    try
+                    {
+                        string Dir = FBD.SelectedPath;
+                         
+                    }
+                    catch
+                    {
+
+                    }
+                }
             }
-            else
+            else 
             {
                 MessageBox.Show("Dedo incorrecto");
             }

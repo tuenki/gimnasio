@@ -1,4 +1,8 @@
 ﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
 using System.Data.SqlClient;
 using System.Data;
 
@@ -13,6 +17,9 @@ namespace GYMDatos
 
         private String _Huella;
 
+
+        private String _Direccion;
+
         private String _Usuario;
         private String _Pass;
         private String _Nombre;
@@ -21,6 +28,8 @@ namespace GYMDatos
         private int _IDCliente;
         private int _IDUsuario;
         private int _Cargo;
+
+        public string Direccion { set { _Direccion = value; } get { return _Direccion; } }
 
         public string Huella { set { _Huella = value; }
         get{ return _Huella; }
@@ -196,6 +205,7 @@ namespace GYMDatos
             Comando.CommandType = CommandType.StoredProcedure;
             Comando.Parameters.AddWithValue("@IDUsuario", IDUsuario);
             HuellaStri = Convert.ToString(Comando.ExecuteScalar());
+            Conexion.CerrarConexion();
             return HuellaStri;
         }
         public DataTable TodasHuellas()
@@ -207,6 +217,24 @@ namespace GYMDatos
             Leer.Close();
             Conexion.CerrarConexion();
             return Tabla;
+        }
+        public void CrearRespaldoDB()
+        {
+            Comando = new SqlCommand("Backupdb", Conexion.AbrirConexion());
+            Comando.CommandType = CommandType.StoredProcedure;
+            Comando.Parameters.AddWithValue("@Direccion",Direccion);
+            Comando.Parameters.AddWithValue("@NameDB",DBConexion.NombreDB);
+            Comando.ExecuteNonQuery();
+            Conexion.CerrarConexion();
+        }
+        public void SubirRespaldoDB()
+        {
+            Comando = new SqlCommand("RestortoreDB", Conexion.AbrirConexion());
+            Comando.CommandType = CommandType.StoredProcedure;
+            Comando.Parameters.AddWithValue("@Direccion", Direccion);
+            Comando.Parameters.AddWithValue("@NameDB", DBConexion.NombreDB);
+            Comando.ExecuteNonQuery();
+            Conexion.CerrarConexion();
         }
     }
 }

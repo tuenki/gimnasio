@@ -19,7 +19,7 @@ namespace xtremgym
         private DPFP.Verification.Verification Verificator;
         private DPFP.Capture.Capture Capturer;
 
-        public int IDUsuario = 0;
+        public int IDUsuario;
 
 
 

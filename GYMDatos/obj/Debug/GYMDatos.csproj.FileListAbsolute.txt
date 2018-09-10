@@ -8,3 +8,8 @@ C:\Users\Novato\Desktop\Proyecto\gimnasio\GYMDatos\bin\Debug\GYMDatos.pdb
 C:\Users\Novato\Desktop\Proyecto\gimnasio\GYMDatos\obj\Debug\GYMDatos.dll
 C:\Users\Novato\Desktop\Proyecto\gimnasio\GYMDatos\obj\Debug\GYMDatos.pdb
 C:\Users\Novato\Desktop\Proyecto\gimnasio\GYMDatos\obj\Debug\GYMDatos.csprojResolveAssemblyReference.cache
+C:\Users\carlos\Desktop\gym\xtremgym\monroy-descompuesto\gimnasio-master\GYMDatos\bin\Debug\GYMDatos.dll
+C:\Users\carlos\Desktop\gym\xtremgym\monroy-descompuesto\gimnasio-master\GYMDatos\bin\Debug\GYMDatos.pdb
+C:\Users\carlos\Desktop\gym\xtremgym\monroy-descompuesto\gimnasio-master\GYMDatos\obj\Debug\GYMDatos.csprojResolveAssemblyReference.cache
+C:\Users\carlos\Desktop\gym\xtremgym\monroy-descompuesto\gimnasio-master\GYMDatos\obj\Debug\GYMDatos.dll
+C:\Users\carlos\Desktop\gym\xtremgym\monroy-descompuesto\gimnasio-master\GYMDatos\obj\Debug\GYMDatos.pdb

@@ -62,6 +62,7 @@
   <ItemGroup>
     <Compile Include="AppData.cs" />
     <Compile Include="CNUsuario.cs" />
+    <Compile Include="CNMembresia.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

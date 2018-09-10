@@ -13,7 +13,6 @@ namespace xtremgym
 {
     public partial class Form1 : Form
     {
-        public int IDUsuario;
         public Form1()
         {
             InitializeComponent();
@@ -94,14 +93,10 @@ namespace xtremgym
             AbrirFormInPanel(new frmUsuarios());
         }
 
-        private void button1_Click(object sender, EventArgs e)
+        private void HoraFEcha_Tick(object sender, EventArgs e)
         {
-            AbrirFormInPanel(new frmMantenimientoDB());
-        }
-
-        private void menuVertical_Paint(object sender, PaintEventArgs e)
-        {
-
+            lavelTime.Text =DateTime.Now.ToString("HH:mm:ss");
+            lavelDate.Text =DateTime.Now.ToShortDateString();
         }
 
         protected override void WndProc(ref Message msj)

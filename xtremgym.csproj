@@ -103,12 +103,6 @@
     <Compile Include="frmMembresia.Designer.cs">
       <DependentUpon>frmMembresia.cs</DependentUpon>
     </Compile>
-    <Compile Include="frmNuevaMembresia.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="frmNuevaMembresia.Designer.cs">
-      <DependentUpon>frmNuevaMembresia.cs</DependentUpon>
-    </Compile>
     <Compile Include="frmNusuarios.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -176,9 +170,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="frmMembresia.resx">
       <DependentUpon>frmMembresia.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="frmNuevaMembresia.resx">
-      <DependentUpon>frmNuevaMembresia.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmNusuarios.resx">
       <DependentUpon>frmNusuarios.cs</DependentUpon>

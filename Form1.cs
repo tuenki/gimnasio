@@ -13,6 +13,7 @@ namespace xtremgym
 {
     public partial class Form1 : Form
     {
+        public int IDUsuario;
         public Form1()
         {
             InitializeComponent();
@@ -92,6 +93,17 @@ namespace xtremgym
         {
             AbrirFormInPanel(new frmUsuarios());
         }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            AbrirFormInPanel(new frmMantenimientoDB());
+        }
+
+        private void menuVertical_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
         protected override void WndProc(ref Message msj)
         {
             const int CoordenandaWFP = 0x84;

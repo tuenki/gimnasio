@@ -41,3 +41,19 @@ C:\Users\Novato\Desktop\Proyecto\gimnasio\bin\Debug\GYMNegocio.dll
 C:\Users\Novato\Desktop\Proyecto\gimnasio\bin\Debug\GYMNegocio.pdb
 C:\Users\Novato\Desktop\Proyecto\gimnasio\bin\Debug\GYMDatos.pdb
 C:\Users\Novato\Desktop\Proyecto\gimnasio\bin\Debug\GYMDatos.dll
+C:\Users\Novato\Desktop\Proyecto\gimnasio\bin\Debug\DPFPDevNET.dll
+C:\Users\Novato\Desktop\Proyecto\gimnasio\bin\Debug\DPFPEngNET.dll
+C:\Users\Novato\Desktop\Proyecto\gimnasio\bin\Debug\DPFPGuiNET.dll
+C:\Users\Novato\Desktop\Proyecto\gimnasio\bin\Debug\DPFPShrNET.dll
+C:\Users\Novato\Desktop\Proyecto\gimnasio\bin\Debug\DPFPVerNET.dll
+C:\Users\Novato\Desktop\Proyecto\gimnasio\bin\Debug\DPFPCtlXWrapperNET.dll
+C:\Users\Novato\Desktop\Proyecto\gimnasio\bin\Debug\DPFPCtlXTypeLibNET.dll
+C:\Users\Novato\Desktop\Proyecto\gimnasio\bin\Debug\DPFPShrXTypeLibNET.dll
+C:\Users\Novato\Desktop\Proyecto\gimnasio\obj\Debug\xtremgym.frmDatosUser.resources
+C:\Users\Novato\Desktop\Proyecto\gimnasio\obj\Debug\xtremgym.SelectNewUser.resources
+C:\Users\Novato\Desktop\Proyecto\gimnasio\obj\Debug\xtremgym.frmMantenimientoDB.resources
+C:\Users\Novato\Desktop\Proyecto\gimnasio\obj\Debug\xtremgym.frmVerficarDedo.resources
+C:\Users\Novato\Desktop\Proyecto\gimnasio\obj\Debug\xtremgym.frmVeriTodasHuellas.resources
+C:\Users\Novato\Desktop\Proyecto\gimnasio - copia\bin\Debug\xtremgym.exe.config
+C:\Users\Novato\Desktop\Proyecto\gimnasio - copia\obj\Debug\xtremgym.exe
+C:\Users\Novato\Desktop\Proyecto\gimnasio - copia\obj\Debug\xtremgym.pdb

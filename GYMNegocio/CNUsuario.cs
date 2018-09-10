@@ -7,6 +7,8 @@ using GYMDatos;
 using System.Data.SqlClient;
 using System.Data;
 using System.Security.Cryptography;
+using System.IO;
+
 namespace GYMNegocio
 {
     public class CNUsuario
@@ -17,7 +19,8 @@ namespace GYMNegocio
         
         private String _Usuario;
         private String _Contrasenia;
-
+        //
+        private String _Huella;
         //
         private String _Nombre;
         private String _ApellidoP;
@@ -25,6 +28,12 @@ namespace GYMNegocio
         private int _IDCliente;
         private int _IDUsuario;
         private int _Cargo;
+
+        public string Huella
+        {
+            set { _Huella = value; }
+            get { return _Huella; }
+        }
 
         public int Cargo
         {
@@ -91,6 +100,7 @@ namespace GYMNegocio
             objDato.Nombre = Nombre;
             objDato.ApellidoP = ApellidoP;
             objDato.ApellidoM = ApellidoM;
+            objDato.Huella = Huella;
             objDato.NuevoUsuario();
         }
         public void NuevoLogin()
@@ -103,6 +113,20 @@ namespace GYMNegocio
             objDato.NuevoLogin();
 
         }
+        public void NuevoUsuarioLogin()
+        {
+            objDato.Nombre = Nombre;
+            objDato.ApellidoP = ApellidoP;
+            objDato.ApellidoM = ApellidoM;
+            objDato.Usuario = Usuario;
+            EncriptarPass();
+            objDato.Pass = Contrasenia;
+            objDato.Cargo = Cargo;
+            objDato.Huella = Huella;
+            objDato.NuevoUsuarioLogin();
+            
+        }
+
         public void EncriptarPass()
         {
             var bytes = Encoding.UTF8.GetBytes(Contrasenia);
@@ -112,6 +136,74 @@ namespace GYMNegocio
             }
             
         }
+        public string ConvertirHuellaAString(DPFP.Template Template)
+        {
+            string HuellaString = null;
+            foreach(byte SS in Template.Bytes)
+            {
+                HuellaString += SS.ToString() + "-";
+            }
+            return HuellaString;
+            
+        }
+        public void ActualizarLoginConPass()
+        {
+            objDato.IDUsuario = IDUsuario;
+            objDato.Usuario = Usuario;
+            EncriptarPass();
+            objDato.Pass = Contrasenia;
+            objDato.Cargo = Cargo;
+            objDato.ActualizarLoginConPass();
+        }
+        public void ActualizarLogin()
+        {
+            objDato.IDUsuario = IDUsuario;
+            objDato.Usuario = Usuario;
+            objDato.Cargo = Cargo;
+            objDato.ActualizarLogin();
+        }
+        public void EliminarLogin()
+        {
+            objDato.IDUsuario = IDUsuario;
+            objDato.EliminarLogin();
+        }
 
+        public DPFP.Template RegresarHuellaTemp()
+        {
+            string[] Hu;
+            objDato.IDUsuario = IDUsuario;
+            Hu = objDato.VeriHuella().Split('-');
+            Hu = Hu.Take(Hu.Length - 1).ToArray();
+
+            byte[] Hub = Array.ConvertAll(Hu, byte.Parse);
+
+            /*int cont = 0;
+            foreach (string H in Hu)
+            {
+                Hub[cont] = Convert.ToByte(H);
+                cont++;
+            }*/
+            Stream D = new MemoryStream(Hub);
+            DPFP.Template Tem = new DPFP.Template(D);
+            return Tem;
+
+        }
+        public List<AppData> HuellasTemplate()
+        {
+            List<AppData> TemLis = new List<AppData>();
+            DataTable DT = objDato.TodasHuellas();
+            foreach(DataRow Row in DT.Rows)
+            {
+                string[] Hu;
+                Hu = Convert.ToString(Row[0]).Split('-');
+                Hu = Hu.Take(Hu.Length - 1).ToArray();
+                byte[] Hub = Array.ConvertAll(Hu, byte.Parse);
+                Stream D = new MemoryStream(Hub);
+                DPFP.Template Tem = new DPFP.Template(D);
+                TemLis.Add(new AppData {Template = Tem,IDCliente = Convert.ToInt32(Row[1])});
+            }
+            return TemLis;
+        }
+        
     }
 }

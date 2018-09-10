@@ -15,6 +15,8 @@ namespace GYMDatos
         private SqlCommand Comando = new SqlCommand();
         private DataTable Tabla = new DataTable();
 
+        private String _Huella;
+
         private String _Usuario;
         private String _Pass;
         private String _Nombre;
@@ -23,6 +25,10 @@ namespace GYMDatos
         private int _IDCliente;
         private int _IDUsuario;
         private int _Cargo;
+
+        public string Huella { set { _Huella = value; }
+        get{ return _Huella; }
+        }
 
         public int Cargo { set { _Cargo = value; }
             get { return _Cargo; }
@@ -125,6 +131,8 @@ namespace GYMDatos
             Comando.Parameters.AddWithValue("@Nombre", Nombre);
             Comando.Parameters.AddWithValue("@ApellidoP", ApellidoP);
             Comando.Parameters.AddWithValue("@ApellidoM", ApellidoM);
+            Comando.Parameters.AddWithValue("@Huella", Huella);
+            Comando.Parameters.AddWithValue("@IDU", 0);
             Comando.ExecuteNonQuery();
             Conexion.CerrarConexion();
 
@@ -140,6 +148,69 @@ namespace GYMDatos
             Comando.ExecuteNonQuery();
             Conexion.CerrarConexion();
 
+        }
+        public void NuevoUsuarioLogin()
+        {
+            Comando = new SqlCommand("NuevoUsuarioReturn", Conexion.AbrirConexion());
+            Comando.CommandType = CommandType.StoredProcedure;
+            Comando.Parameters.AddWithValue("@IDU", 0);
+            Comando.Parameters.AddWithValue("@Nombre",Nombre);
+            Comando.Parameters.AddWithValue("@ApellidoP",ApellidoP);
+            Comando.Parameters.AddWithValue("@ApellidoM",ApellidoM);
+            Comando.Parameters.AddWithValue("@UserName",Usuario);
+            Comando.Parameters.AddWithValue("@Pwd",Pass);
+            Comando.Parameters.AddWithValue("@Cargo",Cargo);
+            Comando.Parameters.AddWithValue("@Huella", Huella);
+            Comando.ExecuteNonQuery();
+            Conexion.CerrarConexion();
+        }
+        public void ActualizarLoginConPass()
+        {
+            Comando = new SqlCommand("ActLoginPass", Conexion.AbrirConexion());
+            Comando.CommandType = CommandType.StoredProcedure;
+            Comando.Parameters.AddWithValue("@IDLogin",IDUsuario);
+            Comando.Parameters.AddWithValue("@User", Usuario);
+            Comando.Parameters.AddWithValue("@Pass", Pass);
+            Comando.Parameters.AddWithValue("@Cargo", Cargo);
+            Comando.ExecuteNonQuery();
+            Conexion.CerrarConexion();
+        }
+        public void ActualizarLogin()
+        {
+            Comando = new SqlCommand("ActLogin", Conexion.AbrirConexion());
+            Comando.CommandType = CommandType.StoredProcedure;
+            Comando.Parameters.AddWithValue("@IDLogin", IDUsuario);
+            Comando.Parameters.AddWithValue("@User", Usuario);
+            Comando.Parameters.AddWithValue("@Cargo", Cargo);
+            Comando.ExecuteNonQuery();
+            Conexion.CerrarConexion();
+        }
+        public void EliminarLogin()
+        {
+            Comando = new SqlCommand("EliminarLogin", Conexion.AbrirConexion());
+            Comando.CommandType = CommandType.StoredProcedure;
+            Comando.Parameters.AddWithValue("@IDLogin", IDUsuario);
+            Comando.ExecuteNonQuery();
+            Conexion.CerrarConexion();
+        }
+        public string VeriHuella()
+        {
+            string HuellaStri = null;
+            Comando = new SqlCommand("ObtenerHuella", Conexion.AbrirConexion());
+            Comando.CommandType = CommandType.StoredProcedure;
+            Comando.Parameters.AddWithValue("@IDUsuario", IDUsuario);
+            HuellaStri = Convert.ToString(Comando.ExecuteScalar());
+            return HuellaStri;
+        }
+        public DataTable TodasHuellas()
+        {
+            Comando = new SqlCommand("SELECT huella,IDUsuario from huella", Conexion.AbrirConexion());
+            Comando.CommandType = CommandType.Text;
+            Leer = Comando.ExecuteReader();
+            Tabla.Load(Leer);
+            Leer.Close();
+            Conexion.CerrarConexion();
+            return Tabla;
         }
     }
 }

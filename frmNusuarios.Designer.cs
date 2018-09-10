@@ -33,9 +33,9 @@
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.textBox3 = new System.Windows.Forms.TextBox();
+            this.txtNombre = new System.Windows.Forms.TextBox();
+            this.txtApellidoP = new System.Windows.Forms.TextBox();
+            this.txtApellidoM = new System.Windows.Forms.TextBox();
             this.txtuser = new System.Windows.Forms.TextBox();
             this.button1 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
@@ -47,8 +47,10 @@
             this.radioButton1 = new System.Windows.Forms.RadioButton();
             this.radioButton2 = new System.Windows.Forms.RadioButton();
             this.CBCargo = new System.Windows.Forms.ComboBox();
+            this.GbxRadiob = new System.Windows.Forms.GroupBox();
             this.GExistente.SuspendLayout();
             this.GNuevo.SuspendLayout();
+            this.GbxRadiob.SuspendLayout();
             this.SuspendLayout();
             // 
             // label1
@@ -57,9 +59,9 @@
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.Location = new System.Drawing.Point(117, 9);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(168, 29);
+            this.label1.Size = new System.Drawing.Size(96, 29);
             this.label1.TabIndex = 0;
-            this.label1.Text = "Nuevo usuario";
+            this.label1.Text = "Usuario";
             this.label1.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             // 
             // label2
@@ -102,26 +104,26 @@
             this.label5.TabIndex = 4;
             this.label5.Text = "Usuario";
             // 
-            // textBox1
+            // txtNombre
             // 
-            this.textBox1.Location = new System.Drawing.Point(99, 31);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(219, 20);
-            this.textBox1.TabIndex = 5;
+            this.txtNombre.Location = new System.Drawing.Point(99, 31);
+            this.txtNombre.Name = "txtNombre";
+            this.txtNombre.Size = new System.Drawing.Size(219, 20);
+            this.txtNombre.TabIndex = 5;
             // 
-            // textBox2
+            // txtApellidoP
             // 
-            this.textBox2.Location = new System.Drawing.Point(152, 67);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(166, 20);
-            this.textBox2.TabIndex = 6;
+            this.txtApellidoP.Location = new System.Drawing.Point(152, 67);
+            this.txtApellidoP.Name = "txtApellidoP";
+            this.txtApellidoP.Size = new System.Drawing.Size(166, 20);
+            this.txtApellidoP.TabIndex = 6;
             // 
-            // textBox3
+            // txtApellidoM
             // 
-            this.textBox3.Location = new System.Drawing.Point(152, 103);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(166, 20);
-            this.textBox3.TabIndex = 7;
+            this.txtApellidoM.Location = new System.Drawing.Point(152, 103);
+            this.txtApellidoM.Name = "txtApellidoM";
+            this.txtApellidoM.Size = new System.Drawing.Size(166, 20);
+            this.txtApellidoM.TabIndex = 7;
             // 
             // txtuser
             // 
@@ -174,12 +176,12 @@
             // 
             // GNuevo
             // 
-            this.GNuevo.Controls.Add(this.textBox1);
+            this.GNuevo.Controls.Add(this.txtNombre);
             this.GNuevo.Controls.Add(this.label2);
             this.GNuevo.Controls.Add(this.label3);
             this.GNuevo.Controls.Add(this.label4);
-            this.GNuevo.Controls.Add(this.textBox2);
-            this.GNuevo.Controls.Add(this.textBox3);
+            this.GNuevo.Controls.Add(this.txtApellidoP);
+            this.GNuevo.Controls.Add(this.txtApellidoM);
             this.GNuevo.Location = new System.Drawing.Point(26, 114);
             this.GNuevo.Name = "GNuevo";
             this.GNuevo.Size = new System.Drawing.Size(344, 142);
@@ -209,7 +211,7 @@
             // radioButton1
             // 
             this.radioButton1.AutoSize = true;
-            this.radioButton1.Location = new System.Drawing.Point(88, 77);
+            this.radioButton1.Location = new System.Drawing.Point(16, 19);
             this.radioButton1.Name = "radioButton1";
             this.radioButton1.Size = new System.Drawing.Size(68, 17);
             this.radioButton1.TabIndex = 15;
@@ -221,13 +223,14 @@
             // radioButton2
             // 
             this.radioButton2.AutoSize = true;
-            this.radioButton2.Location = new System.Drawing.Point(263, 77);
+            this.radioButton2.Location = new System.Drawing.Point(137, 19);
             this.radioButton2.Name = "radioButton2";
             this.radioButton2.Size = new System.Drawing.Size(57, 17);
             this.radioButton2.TabIndex = 16;
             this.radioButton2.TabStop = true;
             this.radioButton2.Text = "Nuevo";
             this.radioButton2.UseVisualStyleBackColor = true;
+            this.radioButton2.CheckedChanged += new System.EventHandler(this.radioButton2_CheckedChanged);
             // 
             // CBCargo
             // 
@@ -238,15 +241,24 @@
             this.CBCargo.Size = new System.Drawing.Size(198, 21);
             this.CBCargo.TabIndex = 17;
             // 
+            // GbxRadiob
+            // 
+            this.GbxRadiob.Controls.Add(this.radioButton1);
+            this.GbxRadiob.Controls.Add(this.radioButton2);
+            this.GbxRadiob.Location = new System.Drawing.Point(109, 57);
+            this.GbxRadiob.Name = "GbxRadiob";
+            this.GbxRadiob.Size = new System.Drawing.Size(200, 51);
+            this.GbxRadiob.TabIndex = 18;
+            this.GbxRadiob.TabStop = false;
+            // 
             // frmNusuarios
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(401, 460);
+            this.ClientSize = new System.Drawing.Size(416, 458);
+            this.Controls.Add(this.GbxRadiob);
             this.Controls.Add(this.CBCargo);
-            this.Controls.Add(this.radioButton2);
             this.Controls.Add(this.GNuevo);
-            this.Controls.Add(this.radioButton1);
             this.Controls.Add(this.txtpwd);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.GExistente);
@@ -262,6 +274,8 @@
             this.GExistente.ResumeLayout(false);
             this.GNuevo.ResumeLayout(false);
             this.GNuevo.PerformLayout();
+            this.GbxRadiob.ResumeLayout(false);
+            this.GbxRadiob.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -274,19 +288,20 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.TextBox textBox2;
-        private System.Windows.Forms.TextBox textBox3;
-        private System.Windows.Forms.TextBox txtuser;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.GroupBox GExistente;
-        private System.Windows.Forms.GroupBox GNuevo;
         private System.Windows.Forms.ComboBox CBNombre;
-        private System.Windows.Forms.TextBox txtpwd;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.RadioButton radioButton1;
         private System.Windows.Forms.RadioButton radioButton2;
-        private System.Windows.Forms.ComboBox CBCargo;
+        public System.Windows.Forms.TextBox txtuser;
+        public System.Windows.Forms.GroupBox GNuevo;
+        public System.Windows.Forms.TextBox txtpwd;
+        public System.Windows.Forms.ComboBox CBCargo;
+        public System.Windows.Forms.GroupBox GbxRadiob;
+        public System.Windows.Forms.TextBox txtNombre;
+        public System.Windows.Forms.TextBox txtApellidoP;
+        public System.Windows.Forms.TextBox txtApellidoM;
     }
 }

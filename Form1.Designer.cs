@@ -45,6 +45,7 @@
             this.iconClose = new System.Windows.Forms.PictureBox();
             this.panelContainer = new System.Windows.Forms.Panel();
             this.HoraFEcha = new System.Windows.Forms.Timer(this.components);
+            this.button1 = new System.Windows.Forms.Button();
             this.menuVertical.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.barraTitulo.SuspendLayout();
@@ -57,6 +58,7 @@
             // menuVertical
             // 
             this.menuVertical.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(122)))), ((int)(((byte)(204)))));
+            this.menuVertical.Controls.Add(this.button1);
             this.menuVertical.Controls.Add(this.lavelDate);
             this.menuVertical.Controls.Add(this.lavelTime);
             this.menuVertical.Controls.Add(this.btnReporte);
@@ -255,6 +257,23 @@
             this.HoraFEcha.Enabled = true;
             this.HoraFEcha.Tick += new System.EventHandler(this.HoraFEcha_Tick);
             // 
+            // button1
+            // 
+            this.button1.FlatAppearance.BorderSize = 0;
+            this.button1.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(14)))), ((int)(((byte)(10)))), ((int)(((byte)(43)))));
+            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button1.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button1.ForeColor = System.Drawing.Color.White;
+            this.button1.Image = ((System.Drawing.Image)(resources.GetObject("button1.Image")));
+            this.button1.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.button1.Location = new System.Drawing.Point(17, 420);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(228, 40);
+            this.button1.TabIndex = 7;
+            this.button1.Text = "Mantenimiento";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -300,6 +319,7 @@
         private System.Windows.Forms.Label lavelDate;
         private System.Windows.Forms.Label lavelTime;
         private System.Windows.Forms.Timer HoraFEcha;
+        private System.Windows.Forms.Button button1;
     }
 }
 

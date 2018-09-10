@@ -47,5 +47,10 @@ namespace xtremgym
             frmVeriTodasHuellas VTD = new frmVeriTodasHuellas();
             VTD.ShowDialog();
         }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
     }
 }

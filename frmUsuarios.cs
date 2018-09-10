@@ -97,5 +97,46 @@ namespace xtremgym
                 
             }
             }
+
+        private void button5_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
+        private void txtBuscar_TextChanged(object sender, EventArgs e)
+        {
+            try
+            {
+                if (txtBuscar.Text != "")
+                {
+                    dataGridView1.CurrentCell = null;
+                    foreach (DataGridViewRow r in dataGridView1.Rows)
+                    {
+                        r.Visible = false;
+                    }
+                    foreach (DataGridViewRow r in dataGridView1.Rows)
+                    {
+                        foreach (DataGridViewCell c in r.Cells)
+                        {
+                            if ((c.Value.ToString().ToUpper()).IndexOf(txtBuscar.Text.ToUpper()) == 0)
+                            {
+                                r.Visible = true;
+                                break;
+                            }
+                        }
+                    }
+
+                }
+                else
+                {
+                    CargarClientes();
+                }
+
+            }
+            catch(Exception ex)
+            {
+                MessageBox.Show("Error: "+ex.ToString());
+            }
+        }
     }
 }

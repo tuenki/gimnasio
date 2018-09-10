@@ -46,5 +46,41 @@ namespace xtremgym
             dataGridView1.Columns["IDUsuario"].Visible = false;
             dataGridView1.Columns["IDSuscripcion"].Visible = false;
         }
+
+        private void textBox1_TextChanged(object sender, EventArgs e)
+        {
+            try
+            {
+                if (textBox1.Text != "")
+                {
+                    dataGridView1.CurrentCell = null;
+                    foreach (DataGridViewRow r in dataGridView1.Rows)
+                    {
+                        r.Visible = false;
+                    }
+                    foreach (DataGridViewRow r in dataGridView1.Rows)
+                    {
+                        foreach (DataGridViewCell c in r.Cells)
+                        {
+                            if ((c.Value.ToString().ToUpper()).IndexOf(textBox1.Text.ToUpper()) == 0)
+                            {
+                                r.Visible = true;
+                                break;
+                            }
+                        }
+                    }
+
+                }
+                else
+                {
+                    MostrarClient();
+                }
+
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error: " + ex.ToString());
+            }
+        }
     }
 }

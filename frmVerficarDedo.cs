@@ -97,6 +97,14 @@ namespace xtremgym
 
             }));
         }
+        private void cerrar()
+        {
+            this.Invoke(new Function(delegate
+            {
+                MessageBox.Show("Sensor desconectado");
+                this.Close();
+            }));
+        }
         private void DrawPicture(Bitmap bitmap)
         {
 
@@ -156,6 +164,7 @@ namespace xtremgym
         public void OnReaderDisconnect(object Capture, string ReaderSerialNumber)
         {
             Mostarmensaje("Sensor desconectado");
+            cerrar();
         }
 
         public void OnSampleQuality(object Capture, string ReaderSerialNumber, CaptureFeedback CaptureFeedback)

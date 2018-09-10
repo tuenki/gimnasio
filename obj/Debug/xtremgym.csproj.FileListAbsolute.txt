@@ -26,7 +26,6 @@ C:\Users\Novato\Desktop\Proyecto\gimnasio\obj\Debug\xtremgym.Form1.resources
 C:\Users\Novato\Desktop\Proyecto\gimnasio\obj\Debug\xtremgym.frmCliente.resources
 C:\Users\Novato\Desktop\Proyecto\gimnasio\obj\Debug\xtremgym.frmClientes.resources
 C:\Users\Novato\Desktop\Proyecto\gimnasio\obj\Debug\xtremgym.frmMembresia.resources
-C:\Users\Novato\Desktop\Proyecto\gimnasio\obj\Debug\xtremgym.frmNuevaMembresia.resources
 C:\Users\Novato\Desktop\Proyecto\gimnasio\obj\Debug\xtremgym.frmNusuarios.resources
 C:\Users\Novato\Desktop\Proyecto\gimnasio\obj\Debug\xtremgym.frmPagos.resources
 C:\Users\Novato\Desktop\Proyecto\gimnasio\obj\Debug\xtremgym.frmReportes.resources

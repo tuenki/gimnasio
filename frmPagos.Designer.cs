@@ -38,7 +38,7 @@
             this.txtPago = new System.Windows.Forms.TextBox();
             this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.label6 = new System.Windows.Forms.Label();
-            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.txtDias = new System.Windows.Forms.TextBox();
             this.lbTotal = new System.Windows.Forms.Label();
             this.button2 = new System.Windows.Forms.Button();
             this.SuspendLayout();
@@ -63,6 +63,7 @@
             this.label2.Size = new System.Drawing.Size(64, 20);
             this.label2.TabIndex = 1;
             this.label2.Text = "# Socio";
+            this.label2.Visible = false;
             // 
             // label3
             // 
@@ -119,6 +120,7 @@
             this.textBox1.Name = "textBox1";
             this.textBox1.Size = new System.Drawing.Size(232, 26);
             this.textBox1.TabIndex = 6;
+            this.textBox1.Visible = false;
             // 
             // txtPago
             // 
@@ -130,12 +132,17 @@
             // 
             // comboBox1
             // 
+            this.comboBox1.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboBox1.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.comboBox1.FormattingEnabled = true;
+            this.comboBox1.Items.AddRange(new object[] {
+            "Selecciona una opcion"});
             this.comboBox1.Location = new System.Drawing.Point(106, 95);
             this.comboBox1.Name = "comboBox1";
             this.comboBox1.Size = new System.Drawing.Size(209, 28);
             this.comboBox1.TabIndex = 9;
+            this.comboBox1.SelectedIndexChanged += new System.EventHandler(this.comboBox1_SelectedIndexChanged);
+            this.comboBox1.SelectionChangeCommitted += new System.EventHandler(this.comboBox1_SelectionChangeCommitted);
             // 
             // label6
             // 
@@ -148,13 +155,13 @@
             this.label6.TabIndex = 10;
             this.label6.Text = "Dias";
             // 
-            // textBox2
+            // txtDias
             // 
-            this.textBox2.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox2.Location = new System.Drawing.Point(58, 130);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(97, 26);
-            this.textBox2.TabIndex = 11;
+            this.txtDias.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtDias.Location = new System.Drawing.Point(58, 130);
+            this.txtDias.Name = "txtDias";
+            this.txtDias.Size = new System.Drawing.Size(97, 26);
+            this.txtDias.TabIndex = 11;
             // 
             // lbTotal
             // 
@@ -162,9 +169,9 @@
             this.lbTotal.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbTotal.Location = new System.Drawing.Point(226, 183);
             this.lbTotal.Name = "lbTotal";
-            this.lbTotal.Size = new System.Drawing.Size(84, 29);
+            this.lbTotal.Size = new System.Drawing.Size(26, 29);
             this.lbTotal.TabIndex = 12;
-            this.lbTotal.Text = "100.00";
+            this.lbTotal.Text = "0";
             // 
             // button2
             // 
@@ -188,7 +195,7 @@
             this.ClientSize = new System.Drawing.Size(344, 238);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.lbTotal);
-            this.Controls.Add(this.textBox2);
+            this.Controls.Add(this.txtDias);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.comboBox1);
             this.Controls.Add(this.txtPago);
@@ -221,7 +228,7 @@
         private System.Windows.Forms.TextBox txtPago;
         private System.Windows.Forms.ComboBox comboBox1;
         private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.TextBox txtDias;
         private System.Windows.Forms.Label lbTotal;
         private System.Windows.Forms.Button button2;
     }

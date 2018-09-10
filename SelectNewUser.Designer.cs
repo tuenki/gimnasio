@@ -154,6 +154,7 @@
             this.Controls.Add(this.groupBox1);
             this.Name = "SelectNewUser";
             this.Text = "SelectNewUser";
+            this.Load += new System.EventHandler(this.SelectNewUser_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox2.ResumeLayout(false);
             this.ResumeLayout(false);

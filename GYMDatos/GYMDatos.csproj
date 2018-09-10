@@ -40,6 +40,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="CDSuscripcion.cs" />
     <Compile Include="CDUsuario.cs" />
     <Compile Include="CDMembresia.cs" />
     <Compile Include="DBConexion.cs" />

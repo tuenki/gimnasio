@@ -26,13 +26,48 @@ namespace xtremgym
         private void btnNuevoS_Click(object sender, EventArgs e)
         {
             frmCliente frmc = new frmCliente();
-            frmc.Show();
+            frmc.ShowDialog();
+            MostrarClient();
         }
 
         private void button2_Click(object sender, EventArgs e)
         {
-            frmPagos frp = new frmPagos();
-            frp.Show();
+            if(dataGridView1.SelectedRows.Count > 0 )
+            {
+                if(dataGridView1.CurrentRow.Cells["Expiracion"].Value.ToString() != "")
+                {
+                    if (Convert.ToDateTime(dataGridView1.CurrentRow.Cells["Expiracion"].Value) < DateTime.Now)
+                    {
+                        frmPagos frp = new frmPagos();
+                        frp.IDCliente = Convert.ToInt32(dataGridView1.CurrentRow.Cells[0].Value);
+                        if (dataGridView1.CurrentRow.Cells["IDSuscripcion"].Value.ToString() != "")
+                            frp.Suscripcion = Convert.ToInt32(dataGridView1.CurrentRow.Cells["IDSuscripcion"].Value);
+                        frp.ShowDialog();
+                        MostrarClient();
+                    }
+                    else
+                    {
+                        MessageBox.Show("Este cliente ya tiene una suscripcion");
+                    }
+                }
+                else
+                {
+                    frmPagos frp = new frmPagos();
+                    frp.IDCliente = Convert.ToInt32(dataGridView1.CurrentRow.Cells[0].Value);
+                    if (dataGridView1.CurrentRow.Cells["IDSuscripcion"].Value.ToString() != "")
+                        frp.Suscripcion = Convert.ToInt32(dataGridView1.CurrentRow.Cells["IDSuscripcion"].Value);
+                    frp.ShowDialog();
+                    MostrarClient();
+
+                }
+                
+                
+            }
+            else
+            {
+                MessageBox.Show("Selecciona un cliente");
+            }
+            
         }
 
         private void frmClientes_Load(object sender, EventArgs e)

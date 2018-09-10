@@ -162,7 +162,10 @@ namespace xtremgym
         private void button1_Click(object sender, EventArgs e)
         {
             if (Tipo == 0)
+            {
                 NuevoUsuario();
+            }
+                //
             else if (Tipo == 1)
             {
                 frmDatosUser FDU = new frmDatosUser();
@@ -197,7 +200,8 @@ namespace xtremgym
                     if(ObjNu.ApellidoM == txtApellidoM.Text)
                     {
                         ObjNu.NuevoUsuario();
-                       // MessageBox.Show("Se ingreso correctamente");
+                       MessageBox.Show("Se ingreso correctamente");
+                        this.Close();
                     }
                 }
             }

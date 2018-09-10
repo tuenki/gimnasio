@@ -63,5 +63,10 @@ namespace xtremgym
             
 
         }
+
+        private void SelectNewUser_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

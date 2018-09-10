@@ -41,6 +41,7 @@ C:\Users\Novato\Desktop\Proyecto\gimnasio\bin\Debug\GYMNegocio.dll
 C:\Users\Novato\Desktop\Proyecto\gimnasio\bin\Debug\GYMNegocio.pdb
 C:\Users\Novato\Desktop\Proyecto\gimnasio\bin\Debug\GYMDatos.pdb
 C:\Users\Novato\Desktop\Proyecto\gimnasio\bin\Debug\GYMDatos.dll
+<<<<<<< HEAD
 C:\Users\Novato\Desktop\Proyecto\gimnasio\bin\Debug\DPFPDevNET.dll
 C:\Users\Novato\Desktop\Proyecto\gimnasio\bin\Debug\DPFPEngNET.dll
 C:\Users\Novato\Desktop\Proyecto\gimnasio\bin\Debug\DPFPGuiNET.dll
@@ -57,3 +58,27 @@ C:\Users\Novato\Desktop\Proyecto\gimnasio\obj\Debug\xtremgym.frmVeriTodasHuellas
 C:\Users\Novato\Desktop\Proyecto\gimnasio - copia\bin\Debug\xtremgym.exe.config
 C:\Users\Novato\Desktop\Proyecto\gimnasio - copia\obj\Debug\xtremgym.exe
 C:\Users\Novato\Desktop\Proyecto\gimnasio - copia\obj\Debug\xtremgym.pdb
+=======
+C:\Users\carlos\Desktop\gym\xtremgym\gimnasio-master\bin\Debug\xtremgym.exe.config
+C:\Users\carlos\Desktop\gym\xtremgym\gimnasio-master\obj\Debug\xtremgym.exe
+C:\Users\carlos\Desktop\gym\xtremgym\gimnasio-master\obj\Debug\xtremgym.pdb
+C:\Users\carlos\Desktop\gym\xtremgym\gimnasio-master\bin\Debug\xtremgym.exe
+C:\Users\carlos\Desktop\gym\xtremgym\gimnasio-master\bin\Debug\xtremgym.pdb
+C:\Users\carlos\Desktop\gym\xtremgym\gimnasio-master\bin\Debug\GYMDatos.dll
+C:\Users\carlos\Desktop\gym\xtremgym\gimnasio-master\bin\Debug\GYMNegocio.dll
+C:\Users\carlos\Desktop\gym\xtremgym\gimnasio-master\bin\Debug\GYMDatos.pdb
+C:\Users\carlos\Desktop\gym\xtremgym\gimnasio-master\bin\Debug\GYMNegocio.pdb
+C:\Users\carlos\Desktop\gym\xtremgym\gimnasio-master\obj\Debug\xtremgym.csprojResolveAssemblyReference.cache
+C:\Users\carlos\Desktop\gym\xtremgym\gimnasio-master\obj\Debug\xtremgym.Form1.resources
+C:\Users\carlos\Desktop\gym\xtremgym\gimnasio-master\obj\Debug\xtremgym.frmCliente.resources
+C:\Users\carlos\Desktop\gym\xtremgym\gimnasio-master\obj\Debug\xtremgym.frmClientes.resources
+C:\Users\carlos\Desktop\gym\xtremgym\gimnasio-master\obj\Debug\xtremgym.frmMembresia.resources
+C:\Users\carlos\Desktop\gym\xtremgym\gimnasio-master\obj\Debug\xtremgym.frmNuevaMembresia.resources
+C:\Users\carlos\Desktop\gym\xtremgym\gimnasio-master\obj\Debug\xtremgym.frmNusuarios.resources
+C:\Users\carlos\Desktop\gym\xtremgym\gimnasio-master\obj\Debug\xtremgym.frmPagos.resources
+C:\Users\carlos\Desktop\gym\xtremgym\gimnasio-master\obj\Debug\xtremgym.frmReportes.resources
+C:\Users\carlos\Desktop\gym\xtremgym\gimnasio-master\obj\Debug\xtremgym.frmUsuarios.resources
+C:\Users\carlos\Desktop\gym\xtremgym\gimnasio-master\obj\Debug\xtremgym.login.resources
+C:\Users\carlos\Desktop\gym\xtremgym\gimnasio-master\obj\Debug\xtremgym.Properties.Resources.resources
+C:\Users\carlos\Desktop\gym\xtremgym\gimnasio-master\obj\Debug\xtremgym.csproj.GenerateResource.Cache
+>>>>>>> 00804115b4ef7d75933f62df29dd16dd34e8bc3a

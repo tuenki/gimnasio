@@ -20,11 +20,17 @@ namespace xtremgym
 
         private void btnNuevoS_Click(object sender, EventArgs e)
         {
+<<<<<<< HEAD
             SelectNewUser SNU = new SelectNewUser();
             SNU.ShowDialog();
             /*frmNusuarios frmu = new frmNusuarios();
             frmu.ListaCargo();
             frmu.ShowDialog();*/
+=======
+            frmNusuarios frmu = new frmNusuarios();
+            frmu.Show();
+            CargarClientes();
+>>>>>>> 00804115b4ef7d75933f62df29dd16dd34e8bc3a
         }
 
         private void button2_Click(object sender, EventArgs e)

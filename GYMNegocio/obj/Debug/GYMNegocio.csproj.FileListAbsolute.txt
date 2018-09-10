@@ -1,0 +1,7 @@
+C:\Users\carlos\Desktop\gym\xtremgym\gimnasio-master\GYMNegocio\bin\Debug\GYMNegocio.dll
+C:\Users\carlos\Desktop\gym\xtremgym\gimnasio-master\GYMNegocio\bin\Debug\GYMNegocio.pdb
+C:\Users\carlos\Desktop\gym\xtremgym\gimnasio-master\GYMNegocio\bin\Debug\GYMDatos.dll
+C:\Users\carlos\Desktop\gym\xtremgym\gimnasio-master\GYMNegocio\bin\Debug\GYMDatos.pdb
+C:\Users\carlos\Desktop\gym\xtremgym\gimnasio-master\GYMNegocio\obj\Debug\GYMNegocio.csprojResolveAssemblyReference.cache
+C:\Users\carlos\Desktop\gym\xtremgym\gimnasio-master\GYMNegocio\obj\Debug\GYMNegocio.dll
+C:\Users\carlos\Desktop\gym\xtremgym\gimnasio-master\GYMNegocio\obj\Debug\GYMNegocio.pdb

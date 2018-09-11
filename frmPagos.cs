@@ -32,14 +32,19 @@ namespace xtremgym
                 {
                     double Cambio = pago - costo;
                     this.Close();
-                    if(Suscripcion > 0)
+                    CNRecibo orec = new CNRecibo();
+                    orec.IDCliente = IDCliente;
+                    orec.IDEmpleado = Program.IDUsuario;
+                    orec.Pago = costo;
+                    if (Suscripcion > 0)
                     {
                         Sus.IDSuscripcion = Suscripcion;
                         Sus.IDCliente = IDCliente;
                         Sus.IDMem = Convert.ToInt32(comboBox1.SelectedValue);
                         Sus.Dias = Convert.ToInt32(txtDias.Text);
                         Sus.RenovarSuscrip();
-                            
+                        
+                        orec.InsertarRecibo();
                     }
                     else
                     {
@@ -47,6 +52,7 @@ namespace xtremgym
                         Sus.IDMem = Convert.ToInt32(comboBox1.SelectedValue);
                         Sus.Dias = Convert.ToInt32(txtDias.Text);
                         Sus.NuevaSuscrip();
+                        orec.InsertarRecibo();
                     }
                     MessageBox.Show("El cambio es:" + Cambio.ToString());
 

@@ -116,3 +116,4 @@ C:\Users\carlos\Desktop\gym\xtremgym\monroy-descompuesto\gimnasio-master\obj\Deb
 C:\Users\carlos\Desktop\gym\xtremgym\monroy-descompuesto\gimnasio-master\obj\Debug\xtremgym.SelectNewUser.resources
 C:\Users\carlos\Desktop\gym\xtremgym\monroy-descompuesto\gimnasio-master\obj\Debug\xtremgym.csproj.GenerateResource.Cache
 C:\Users\Novato\Desktop\Proyecto\gimnasio\obj\Debug\xtremgym.frmRegistroDiario.resources
+C:\Users\Novato\Desktop\Proyecto\gimnasio\obj\Debug\xtremgym.frmIniciarCaja.resources

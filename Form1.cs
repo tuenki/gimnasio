@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Runtime.InteropServices;
+using GYMNegocio;
 
 namespace xtremgym
 {
@@ -113,6 +114,17 @@ namespace xtremgym
         {
             lavelTime.Text =DateTime.Now.ToString("HH:mm:ss");
             lavelDate.Text =DateTime.Now.ToShortDateString();
+        }
+
+        private void Form1_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            CNCaja Obcaja = new CNCaja();
+            Obcaja.DineroInicial = Program.DineroInicial;
+            Obcaja.DineroFinal = Program.DineroSuma + Program.DineroInicial;
+            Obcaja.FechaInicial = Program.FechaInicio;
+            Obcaja.IDUsuario = Program.IDUsuario;
+            Obcaja.CierreCaja();
+            MessageBox.Show(string.Format("Dinero ganado {0} -- Dinero Total {1} ", Program.DineroSuma, Program.DineroSuma + Program.DineroInicial));
         }
 
         // funcion para mover el form principal

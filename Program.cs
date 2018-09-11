@@ -10,6 +10,9 @@ namespace xtremgym
     {
 
         public static int IDUsuario;
+        public static double DineroInicial;
+        public static double DineroSuma;
+        public static DateTime FechaInicio;
         /// <summary>
         /// The main entry point for the application.
         /// </summary>

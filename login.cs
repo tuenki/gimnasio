@@ -48,8 +48,10 @@ namespace xtremgym
                     {
                         this.Hide();
                         Program.IDUsuario =Convert.ToInt32(Logear["IDUsuario"]);
-                        Form1 frm1 = new Form1();
-                        frm1.Show();
+                        //Form1 frm1 = new Form1();
+                        //frm1.Show();
+                        frmIniciarCaja InitCaja = new frmIniciarCaja();
+                        InitCaja.ShowDialog();
                     }
                     else
                         MessageBox.Show("Datos Incorrectos");

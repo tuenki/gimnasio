@@ -99,6 +99,12 @@
     <Compile Include="frmDatosUser.Designer.cs">
       <DependentUpon>frmDatosUser.cs</DependentUpon>
     </Compile>
+    <Compile Include="frmIniciarCaja.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmIniciarCaja.Designer.cs">
+      <DependentUpon>frmIniciarCaja.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmMantenimientoDB.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -178,6 +184,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="frmDatosUser.resx">
       <DependentUpon>frmDatosUser.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmIniciarCaja.resx">
+      <DependentUpon>frmIniciarCaja.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmMantenimientoDB.resx">
       <DependentUpon>frmMantenimientoDB.cs</DependentUpon>

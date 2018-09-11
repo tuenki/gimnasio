@@ -61,6 +61,8 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="AppData.cs" />
+    <Compile Include="CNCaja.cs" />
+    <Compile Include="CNRecibo.cs" />
     <Compile Include="CNSuscripcion.cs" />
     <Compile Include="CNUsuario.cs" />
     <Compile Include="CNMembresia.cs" />

@@ -28,12 +28,15 @@ namespace xtremgym
             try
             {
                 Capturer = new DPFP.Capture.Capture();
+                
                 obtenerHuellas();
                 MostrarLista();
                 if (null != Capturer)
                     Capturer.EventHandler = this;
 
                 Capturer.StartCapture();
+
+
             }
             catch(Exception ex)
             {
@@ -156,6 +159,11 @@ namespace xtremgym
         public void OnSampleQuality(object Capture, string ReaderSerialNumber, CaptureFeedback CaptureFeedback)
         {
             
+        }
+
+        private void frmRegistroDiario_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            Capturer.StopCapture();
         }
     }
 }

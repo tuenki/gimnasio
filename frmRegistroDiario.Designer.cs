@@ -115,6 +115,7 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "frmRegistroDiario";
             this.Text = "frmRegistroDiario";
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.frmRegistroDiario_FormClosed);
             this.Load += new System.EventHandler(this.frmRegistroDiario_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);

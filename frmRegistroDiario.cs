@@ -25,13 +25,21 @@ namespace xtremgym
 
         private void frmRegistroDiario_Load(object sender, EventArgs e)
         {
-            Capturer = new DPFP.Capture.Capture();
-            obtenerHuellas();
-            MostrarLista();
-            if (null != Capturer)
-                Capturer.EventHandler = this;
+            try
+            {
+                Capturer = new DPFP.Capture.Capture();
+                obtenerHuellas();
+                MostrarLista();
+                if (null != Capturer)
+                    Capturer.EventHandler = this;
 
-            Capturer.StartCapture();
+                Capturer.StartCapture();
+            }
+            catch(Exception ex)
+            {
+                MessageBox.Show("Error: "+ex.ToString(),"Error Inesperado",MessageBoxButtons.OK,MessageBoxIcon.Error);
+            }
+
         }
         
         private void obtenerHuellas()

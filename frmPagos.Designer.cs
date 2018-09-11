@@ -129,6 +129,7 @@
             this.txtPago.Name = "txtPago";
             this.txtPago.Size = new System.Drawing.Size(100, 26);
             this.txtPago.TabIndex = 8;
+            this.txtPago.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtPago_KeyPress);
             // 
             // comboBox1
             // 

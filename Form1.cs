@@ -104,7 +104,10 @@ namespace xtremgym
         {
             AbrirFormInPanel(new frmRegistroDiario());
         }
-
+        private void btnInicio_Click(object sender, EventArgs e)
+        {
+            AbrirFormInPanel(new frmRegistroDiario());
+        }
         // muestra fecha y hora de la maquina
         private void HoraFEcha_Tick(object sender, EventArgs e)
         {
@@ -112,7 +115,6 @@ namespace xtremgym
             lavelDate.Text =DateTime.Now.ToShortDateString();
         }
 
-     
         // funcion para mover el form principal
         protected override void WndProc(ref Message msj)
         {

@@ -223,5 +223,44 @@ namespace xtremgym
                 }
             }
         }
+
+        private void txtNombreM_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            //solo acepta letras
+            if (!(char.IsLetter(e.KeyChar)) && (e.KeyChar != (char)Keys.Back))
+
+            {
+                e.Handled = true;
+
+                return;
+
+            }
+        }
+
+        private void txtDuracionM_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            //solo acepta numeros
+            if (!(char.IsNumber(e.KeyChar)) && (e.KeyChar != (char)Keys.Back))
+
+            {
+                e.Handled = true;
+
+                return;
+
+            }
+        }
+
+        private void txtPrecioM_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            //solo acepta numeros
+            if (!(char.IsNumber(e.KeyChar)) && (e.KeyChar != (char)Keys.Back))
+
+            {
+                e.Handled = true;
+
+                return;
+
+            }
+        }
     }
 }

@@ -102,7 +102,7 @@ namespace xtremgym
 
         private void Form1_Load(object sender, EventArgs e)
         {
-
+            AbrirFormInPanel(new frmRegistroDiario());
         }
 
         // muestra fecha y hora de la maquina

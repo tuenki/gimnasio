@@ -117,5 +117,17 @@ namespace xtremgym
                 MessageBox.Show("Error: " + ex.ToString());
             }
         }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            if (dataGridView1.SelectedRows.Count > 0)
+            {
+
+            }
+            else
+            {
+                MessageBox.Show("Selecciona un usuario para editar");
+            }
+        }
     }
 }

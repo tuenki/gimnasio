@@ -101,8 +101,9 @@
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(74, 33);
             this.button3.TabIndex = 4;
-            this.button3.Text = "otro";
+            this.button3.Text = "Editar";
             this.button3.UseVisualStyleBackColor = false;
+            this.button3.Click += new System.EventHandler(this.button3_Click);
             // 
             // textBox1
             // 

@@ -210,8 +210,8 @@ namespace GYMDatos
         }
         public DataTable TodasHuellas()
         {
-            Comando = new SqlCommand("SELECT huella,IDUsuario from huella", Conexion.AbrirConexion());
-            Comando.CommandType = CommandType.Text;
+            Comando = new SqlCommand("HuellaSuscrip", Conexion.AbrirConexion());
+            Comando.CommandType = CommandType.StoredProcedure;
             Leer = Comando.ExecuteReader();
             Tabla.Load(Leer);
             Leer.Close();

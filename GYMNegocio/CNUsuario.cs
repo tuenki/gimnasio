@@ -195,12 +195,12 @@ namespace GYMNegocio
             foreach(DataRow Row in DT.Rows)
             {
                 string[] Hu;
-                Hu = Convert.ToString(Row[0]).Split('-');
+                Hu = Convert.ToString(Row[1]).Split('-');
                 Hu = Hu.Take(Hu.Length - 1).ToArray();
                 byte[] Hub = Array.ConvertAll(Hu, byte.Parse);
                 Stream D = new MemoryStream(Hub);
                 DPFP.Template Tem = new DPFP.Template(D);
-                TemLis.Add(new AppData {Template = Tem,IDCliente = Convert.ToInt32(Row[1])});
+                TemLis.Add(new AppData {Template = Tem,IDCliente = Convert.ToInt32(Row[0])});
             }
             return TemLis;
         }

@@ -104,37 +104,61 @@ namespace xtremgym
             Sus.IDCliente = Cliente;
             Sus.InsertaRegistroDiario();
         }
+        private List<int> MasdeUnaves(int ID)
+        {
+            List<int> contador = new List<int>();
+            for (int i = 0; i < dataGridView1.RowCount; i++)
+            {
+                if (Convert.ToInt32(dataGridView1.Rows[i].Cells["IDUsuario"].Value) == ID)
+                {
+                    contador.Add(i);
+                }
+            }
+
+            //se regresan las posisiones
+            return contador;
+        }
         private void SeEncuentra(int IDCliente)
         {
-            foreach(DataGridViewRow Row in dataGridView1.Rows)
+            List<int> i = MasdeUnaves(IDCliente);
+            if (i.Count >= 1)
             {
-                if(IDCliente == Convert.ToInt32(Row.Cells["IDUsuario"].Value))
+                bool Vacio = false;
+                foreach (int Ps in i)
                 {
-                    // se encuentra ya dentro del grid
-                    // Verficamos si el valor de salida se encuentra vacio
-                    if(string.IsNullOrEmpty(Row.Cells["Salida"].Value.ToString()))
+                    DataGridViewRow Row = dataGridView1.Rows[Ps];
+                    if (string.IsNullOrEmpty(Row.Cells["Salida"].Value.ToString()))
                     {
                         //si esta vacio se manda a a insertar la hora
                         CNSuscripcion Sus = new CNSuscripcion();
                         Sus.IDRegistro = Convert.ToInt32(Row.Cells["IDRegistro"].Value);
                         Sus.ActualizarHoraFin();
                         MessageBox.Show("Se ha insertado");
-                        break;
+                        Vacio = true;
                     }
-                    else
+
+                }
+                if (!Vacio)
+                {
+                    DialogResult Res = MessageBox.Show("El cliente ya habia realizado una visita el dia de hoy \n ¿Deseas continuar con el registro?", "Alerta", MessageBoxButtons.YesNo);
+                    if (Res == DialogResult.Yes)
                     {
-                        //si es falso entonces se manda la alerta que este usuario ya habia ingresado anteriormente.
-                        DialogResult Res= MessageBox.Show("El cliente ya habia realizado una visita el dia de hoy \n ¿Deseas continuar con el registro?", "Alerta", MessageBoxButtons.YesNo);
-                        if (Res == DialogResult.Yes)
-                        {
-                            InsertarNuevoRegistro(IDCliente);
-                            MessageBox.Show("Se ha insertado");
-                        }
-                            
-                        break;
+                        InsertarNuevoRegistro(IDCliente);
+                        MessageBox.Show("Se ha insertado");
+                        //break;
                     }
                 }
+
             }
+            else
+            {
+                InsertarNuevoRegistro(IDCliente);
+                MessageBox.Show("Se ha insertado");
+            }
+
+
+
+
         }
         public void OnFingerGone(object Capture, string ReaderSerialNumber)
         {

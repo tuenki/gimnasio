@@ -158,30 +158,38 @@ namespace xtremgym
         {
 
         }
-
+        //boton siguiente
         private void button1_Click(object sender, EventArgs e)
         {
-            if (Tipo == 0)
+            try
             {
-                NuevoUsuario();
-            }
+                if (Tipo == 0)
+                {
+                    NuevoUsuario();
+                }
                 //
-            else if (Tipo == 1)
-            {
-                frmDatosUser FDU = new frmDatosUser();
-                FDU.Nombre = txtNombre.Text;
-                FDU.ApellidoP = txtApellidoP.Text;
-                FDU.ApellidoM = txtApellidoM.Text;
-                FDU.Template = Template;
-                this.Hide();
-                FDU.ShowDialog();
+                else if (Tipo == 1)
+                {
+                    frmDatosUser FDU = new frmDatosUser();
+                    FDU.Nombre = txtNombre.Text;
+                    FDU.ApellidoP = txtApellidoP.Text;
+                    FDU.ApellidoM = txtApellidoM.Text;
+                    FDU.Template = Template;
+                    this.Hide();
+                    FDU.ShowDialog();
+                }
             }
+            catch(Exception ex)
+            {
+                MessageBox.Show("Error: "+ex.ToString(),"Error inesperado",MessageBoxButtons.OK,MessageBoxIcon.Error);
+            }
+            
                 
            /* frmPagos frmp = new frmPagos();
             this.Close();
             frmp.Show();*/
         }
-
+        //boton cerrar
         private void button2_Click(object sender, EventArgs e)
         {
             this.Close();
@@ -233,9 +241,17 @@ namespace xtremgym
         }
         private void frmCliente_Load(object sender, EventArgs e)
         {
-            Init();
-            Start();
-            this.OnTemplate += this.OnTemplate2;
+            try
+            {
+                Init();
+                Start();
+                this.OnTemplate += this.OnTemplate2;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error: " + ex.ToString(), "Error inesperado", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            
         }
         #region EventHandler Members:
         public void OnComplete(object Capture, string ReaderSerialNumber, Sample Sample)
@@ -272,12 +288,20 @@ namespace xtremgym
 
         private void button3_Click(object sender, EventArgs e)
         {
-            pictureBox1.Image = null;
-            Enroller.Clear();
-            Stop();
-            ActualizarStado();
-            OnTemplate(null);
-            Start();
+            try
+            {
+                pictureBox1.Image = null;
+                Enroller.Clear();
+                Stop();
+                ActualizarStado();
+                OnTemplate(null);
+                Start();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error: " + ex.ToString(), "Error inesperado", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            
             
         }
 

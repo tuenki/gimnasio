@@ -29,16 +29,22 @@ namespace xtremgym
         private DPFP.Capture.Capture Capturer;
         private void frmVeriTodasHuellas_Load(object sender, EventArgs e)
         {
-            Capturer = new DPFP.Capture.Capture();
-            CNUsuario Uh = new CNUsuario();
-           // Uh.IDUsuario = IDUsuario;
-            ObtenerHuellas();
-            // Init();
-            if (null != Capturer)
-                Capturer.EventHandler = this;
+            try
+            {
+                Capturer = new DPFP.Capture.Capture();
+                CNUsuario Uh = new CNUsuario();
+                // Uh.IDUsuario = IDUsuario;
+                ObtenerHuellas();
+                // Init();
+                if (null != Capturer)
+                    Capturer.EventHandler = this;
 
-            Capturer.StartCapture();
-            
+                Capturer.StartCapture();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Ocurrio un error:" + ex.ToString(), "Error inesperado", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
         protected DPFP.FeatureSet ExtractFeatures(DPFP.Sample Sample, DPFP.Processing.DataPurpose Purpose)
         {

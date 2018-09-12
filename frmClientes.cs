@@ -17,26 +17,50 @@ namespace xtremgym
         {
             InitializeComponent();
         }
-
+        //boton para cerrar
         private void button5_Click(object sender, EventArgs e)
         {
             this.Close();
         }
-
+        //boton nuevo cliente
         private void btnNuevoS_Click(object sender, EventArgs e)
         {
-            frmCliente frmc = new frmCliente();
-            frmc.ShowDialog();
-            MostrarClient();
+            try
+            {
+                frmCliente frmc = new frmCliente();
+                frmc.ShowDialog();
+                MostrarClient();
+            }
+            catch(Exception ex)
+            {
+                MessageBox.Show("Error: " + ex.ToString(), "Error inesperado", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            
         }
-
+        //boton renovar cliente
         private void button2_Click(object sender, EventArgs e)
         {
-            if(dataGridView1.SelectedRows.Count > 0 )
+            try
             {
-                if(dataGridView1.CurrentRow.Cells["Expiracion"].Value.ToString() != "")
+                if (dataGridView1.SelectedRows.Count > 0)
                 {
-                    if (Convert.ToDateTime(dataGridView1.CurrentRow.Cells["Expiracion"].Value) < DateTime.Now)
+                    if (dataGridView1.CurrentRow.Cells["Expiracion"].Value.ToString() != "")
+                    {
+                        if (Convert.ToDateTime(dataGridView1.CurrentRow.Cells["Expiracion"].Value) < DateTime.Now)
+                        {
+                            frmPagos frp = new frmPagos();
+                            frp.IDCliente = Convert.ToInt32(dataGridView1.CurrentRow.Cells[0].Value);
+                            if (dataGridView1.CurrentRow.Cells["IDSuscripcion"].Value.ToString() != "")
+                                frp.Suscripcion = Convert.ToInt32(dataGridView1.CurrentRow.Cells["IDSuscripcion"].Value);
+                            frp.ShowDialog();
+                            MostrarClient();
+                        }
+                        else
+                        {
+                            MessageBox.Show("Este cliente ya tiene una suscripcion");
+                        }
+                    }
+                    else
                     {
                         frmPagos frp = new frmPagos();
                         frp.IDCliente = Convert.ToInt32(dataGridView1.CurrentRow.Cells[0].Value);
@@ -44,44 +68,58 @@ namespace xtremgym
                             frp.Suscripcion = Convert.ToInt32(dataGridView1.CurrentRow.Cells["IDSuscripcion"].Value);
                         frp.ShowDialog();
                         MostrarClient();
+
                     }
-                    else
-                    {
-                        MessageBox.Show("Este cliente ya tiene una suscripcion");
-                    }
+
+
                 }
                 else
                 {
-                    frmPagos frp = new frmPagos();
-                    frp.IDCliente = Convert.ToInt32(dataGridView1.CurrentRow.Cells[0].Value);
-                    if (dataGridView1.CurrentRow.Cells["IDSuscripcion"].Value.ToString() != "")
-                        frp.Suscripcion = Convert.ToInt32(dataGridView1.CurrentRow.Cells["IDSuscripcion"].Value);
-                    frp.ShowDialog();
-                    MostrarClient();
+                    MessageBox.Show("Selecciona un cliente");
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error: " + ex.ToString(), "Error inesperado", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+
+
+        }
+        //boton para editar
+        private void button3_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                if (dataGridView1.SelectedRows.Count > 0)
+                {
 
                 }
-                
-                
+                else
+                {
+                    MessageBox.Show("Selecciona un usuario para editar");
+                }
             }
-            else
+            catch (Exception ex)
             {
-                MessageBox.Show("Selecciona un cliente");
+                MessageBox.Show("Error: " + ex.ToString(), "Error inesperado", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+
+        }
+        //cargar grid al inicio
+        private void frmClientes_Load(object sender, EventArgs e)
+        {
+            try
+            {
+                MostrarClient();
+            }
+            catch(Exception ex)
+            {
+                MessageBox.Show("Error: " + ex.ToString(), "Error inesperado", MessageBoxButtons.OK, MessageBoxIcon.Error);
+
             }
             
         }
-
-        private void frmClientes_Load(object sender, EventArgs e)
-        {
-            MostrarClient();
-        }
-        private void MostrarClient()
-        {
-            CDUsuario ObjCliente = new CDUsuario();
-            dataGridView1.DataSource = ObjCliente.MostrarClientes();
-            dataGridView1.Columns["IDUsuario"].Visible = false;
-            dataGridView1.Columns["IDSuscripcion"].Visible = false;
-        }
-
+        //Filtrar texto en el grid
         private void textBox1_TextChanged(object sender, EventArgs e)
         {
             try
@@ -117,17 +155,19 @@ namespace xtremgym
                 MessageBox.Show("Error: " + ex.ToString());
             }
         }
-
-        private void button3_Click(object sender, EventArgs e)
+        //metodo para llamar cliente
+        private void MostrarClient()
         {
-            if (dataGridView1.SelectedRows.Count > 0)
-            {
+            CDUsuario ObjCliente = new CDUsuario();
+            dataGridView1.DataSource = ObjCliente.MostrarClientes();
+            dataGridView1.Columns["IDUsuario"].Visible = false;
+            dataGridView1.Columns["IDSuscripcion"].Visible = false;
+        }
 
-            }
-            else
-            {
-                MessageBox.Show("Selecciona un usuario para editar");
-            }
+        private void button1_Click(object sender, EventArgs e)
+        {
+            frmPagos frmp = new frmPagos();
+            frmp.Show();
         }
     }
 }

@@ -132,12 +132,19 @@ namespace xtremgym
 
         private void frmVerficarDedo_Load(object sender, EventArgs e)
         {
-            Capturer = new DPFP.Capture.Capture();
-            CNUsuario Uh = new CNUsuario();
-            Uh.IDUsuario = IDUsuario;
-            Template = Uh.RegresarHuellaTemp();
-            Init();
-            Capturer.StartCapture();
+            try
+            {
+                Capturer = new DPFP.Capture.Capture();
+                CNUsuario Uh = new CNUsuario();
+                Uh.IDUsuario = IDUsuario;
+                Template = Uh.RegresarHuellaTemp();
+                Init();
+                Capturer.StartCapture();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Ocurrio un error:" + ex.ToString(), "Error inesperado", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
 
         }
         #region Header

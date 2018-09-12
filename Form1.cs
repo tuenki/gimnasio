@@ -18,6 +18,8 @@ namespace xtremgym
         {
             InitializeComponent();
         }
+        frmRegistroDiario frmD = new frmRegistroDiario();
+
         //variables para mover form principal
         [DllImport("user32.DLL", EntryPoint = "ReleaseCapture")]
         private extern static void ReleaseCapture();
@@ -78,36 +80,100 @@ namespace xtremgym
         //abre form cliente en form padre
         private void btnClientes_Click(object sender, EventArgs e)
         {
-            AbrirFormInPanel(new frmClientes());
+            try
+            {
+                FormAbierto();
+                AbrirFormInPanel(new frmClientes());
+            }
+            catch(Exception ex)
+            {
+                MessageBox.Show("Error: "+ex.ToString(),"Error inesperado", MessageBoxButtons.OK,MessageBoxIcon.Error);
+            }
+           
+
         }
         //abre form membresia en form padre
         private void btnMembresia_Click(object sender, EventArgs e)
         {
-            AbrirFormInPanel(new frmMembresia());
+            try
+            {
+                FormAbierto();
+                AbrirFormInPanel(new frmMembresia());
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error: " + ex.ToString(), "Error inesperado", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            
         }
         //abre form reporte en form padre
         private void btnReporte_Click(object sender, EventArgs e)
         {
-            AbrirFormInPanel(new frmReportes());
+            try
+            {
+                FormAbierto();
+                AbrirFormInPanel(new frmReportes());
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error: " + ex.ToString(), "Error inesperado", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            
         }
         //abre form usuario en form padre
         private void btnUsuario_Click(object sender, EventArgs e)
         {
-            AbrirFormInPanel(new frmUsuarios());
+            try
+            {
+                FormAbierto();
+                AbrirFormInPanel(new frmUsuarios());
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error: " + ex.ToString(), "Error inesperado", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            
         }
         //abre form mantenimiento en form padre
         private void button1_Click(object sender, EventArgs e)
         {
-            AbrirFormInPanel(new frmMantenimientoDB());
+            try
+            {
+                FormAbierto();
+                AbrirFormInPanel(new frmMantenimientoDB());
+
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error: " + ex.ToString(), "Error inesperado", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            
         }
 
         private void Form1_Load(object sender, EventArgs e)
         {
-            AbrirFormInPanel(new frmRegistroDiario());
+            try
+            {
+                AbrirFormInPanel(new frmRegistroDiario());
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error: " + ex.ToString(), "Error inesperado", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            
         }
         private void btnInicio_Click(object sender, EventArgs e)
         {
-            AbrirFormInPanel(new frmRegistroDiario());
+            try
+            {
+                FormAbierto();
+                AbrirFormInPanel(new frmRegistroDiario());
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error: " + ex.ToString(), "Error inesperado", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            
         }
         // muestra fecha y hora de la maquina
         private void HoraFEcha_Tick(object sender, EventArgs e)
@@ -146,6 +212,24 @@ namespace xtremgym
                 }
             }
             base.WndProc(ref msj);
+        }
+        //metodo para cerrar form abierto
+        private void FormAbierto()
+        {
+            foreach (Form frm in Application.OpenForms)
+            {
+                if ((frm.GetType() == typeof(frmRegistroDiario))||
+                    (frm.GetType() == typeof(frmClientes))||
+                    (frm.GetType() == typeof(frmMembresia))||
+                    (frm.GetType() == typeof(frmReportes))||
+                    (frm.GetType() == typeof(frmUsuarios))||
+                    (frm.GetType() == typeof(frmMantenimientoDB)))
+                {
+                    frm.Close();
+                    break;
+                }
+            }
+
         }
     }
 }

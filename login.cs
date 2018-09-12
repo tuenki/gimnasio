@@ -34,41 +34,44 @@ namespace xtremgym
 
         private void button1_Click(object sender, EventArgs e)
         {
-
-            CNUsuario objEmpleado = new CNUsuario();
-            SqlDataReader Logear;
-            objEmpleado.Usuario = txtUser.Text;
-            objEmpleado.Contrasenia = txtContra.Text;
-            if(objEmpleado.Usuario == txtUser.Text)
+            try
             {
-                if (objEmpleado.Contrasenia == txtContra.Text)
+                CNUsuario objEmpleado = new CNUsuario();
+                SqlDataReader Logear;
+                objEmpleado.Usuario = txtUser.Text;
+                objEmpleado.Contrasenia = txtContra.Text;
+                if(objEmpleado.Usuario == txtUser.Text)
                 {
-                    Logear = objEmpleado.IniciarSesion();
-                    if (Logear.Read() == true)
+                    if (objEmpleado.Contrasenia == txtContra.Text)
                     {
-                        this.Hide();
-                        Program.IDUsuario =Convert.ToInt32(Logear["IDUsuario"]);
-                        //Form1 frm1 = new Form1();
-                        //frm1.Show();
-                        frmIniciarCaja InitCaja = new frmIniciarCaja();
-                        InitCaja.ShowDialog();
+                        Logear = objEmpleado.IniciarSesion();
+                        if (Logear.Read() == true)
+                        {
+                            this.Hide();
+                            Program.IDUsuario =Convert.ToInt32(Logear["IDUsuario"]);
+                            //Form1 frm1 = new Form1();
+                            //frm1.Show();
+                            frmIniciarCaja InitCaja = new frmIniciarCaja();
+                            InitCaja.ShowDialog();
+                        }
+                        else
+                            MessageBox.Show("Datos Incorrectos");
                     }
                     else
-                        MessageBox.Show("Datos Incorrectos");
+                    {
+                        MessageBox.Show(objEmpleado.Contrasenia);
+                    }
+               
                 }
                 else
                 {
-                    MessageBox.Show(objEmpleado.Contrasenia);
+                    MessageBox.Show(objEmpleado.Usuario);
                 }
-               
             }
-            else
+            catch (Exception ex)
             {
-                MessageBox.Show(objEmpleado.Usuario);
+                MessageBox.Show("Ocurrio un error:" + ex.ToString(), "Error inesperado", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
-            
-
-
         }
         
 

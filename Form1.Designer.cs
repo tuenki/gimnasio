@@ -102,7 +102,7 @@
             this.button1.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.button1.Location = new System.Drawing.Point(9, 420);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(228, 40);
+            this.button1.Size = new System.Drawing.Size(235, 40);
             this.button1.TabIndex = 7;
             this.button1.Text = "Mantenimiento";
             this.button1.UseVisualStyleBackColor = true;
@@ -139,7 +139,7 @@
             this.btnReporte.ForeColor = System.Drawing.Color.White;
             this.btnReporte.Image = ((System.Drawing.Image)(resources.GetObject("btnReporte.Image")));
             this.btnReporte.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnReporte.Location = new System.Drawing.Point(0, 328);
+            this.btnReporte.Location = new System.Drawing.Point(9, 328);
             this.btnReporte.Name = "btnReporte";
             this.btnReporte.Size = new System.Drawing.Size(235, 40);
             this.btnReporte.TabIndex = 4;
@@ -156,7 +156,7 @@
             this.btnUsuario.ForeColor = System.Drawing.Color.White;
             this.btnUsuario.Image = ((System.Drawing.Image)(resources.GetObject("btnUsuario.Image")));
             this.btnUsuario.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnUsuario.Location = new System.Drawing.Point(2, 374);
+            this.btnUsuario.Location = new System.Drawing.Point(9, 374);
             this.btnUsuario.Name = "btnUsuario";
             this.btnUsuario.Size = new System.Drawing.Size(235, 40);
             this.btnUsuario.TabIndex = 3;
@@ -173,7 +173,7 @@
             this.btnMembresia.ForeColor = System.Drawing.Color.White;
             this.btnMembresia.Image = ((System.Drawing.Image)(resources.GetObject("btnMembresia.Image")));
             this.btnMembresia.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnMembresia.Location = new System.Drawing.Point(0, 280);
+            this.btnMembresia.Location = new System.Drawing.Point(9, 280);
             this.btnMembresia.Name = "btnMembresia";
             this.btnMembresia.Size = new System.Drawing.Size(235, 40);
             this.btnMembresia.TabIndex = 2;
@@ -190,7 +190,7 @@
             this.btnClientes.ForeColor = System.Drawing.Color.White;
             this.btnClientes.Image = ((System.Drawing.Image)(resources.GetObject("btnClientes.Image")));
             this.btnClientes.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnClientes.Location = new System.Drawing.Point(0, 234);
+            this.btnClientes.Location = new System.Drawing.Point(9, 234);
             this.btnClientes.Name = "btnClientes";
             this.btnClientes.Size = new System.Drawing.Size(235, 40);
             this.btnClientes.TabIndex = 1;

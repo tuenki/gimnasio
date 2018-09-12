@@ -48,22 +48,33 @@
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(280, 228);
+            this.button1.BackColor = System.Drawing.SystemColors.ControlDark;
+            this.button1.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.button1.FlatAppearance.MouseOverBackColor = System.Drawing.SystemColors.Highlight;
+            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button1.ForeColor = System.Drawing.Color.White;
+            this.button1.Location = new System.Drawing.Point(87, 228);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(98, 44);
-            this.button1.TabIndex = 1;
+            this.button1.TabIndex = 2;
             this.button1.Text = "Continuar";
-            this.button1.UseVisualStyleBackColor = true;
+            this.button1.UseVisualStyleBackColor = false;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // btnCancelar
             // 
-            this.btnCancelar.Location = new System.Drawing.Point(12, 228);
+            this.btnCancelar.BackColor = System.Drawing.SystemColors.ControlDark;
+            this.btnCancelar.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.btnCancelar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Red;
+            this.btnCancelar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnCancelar.ForeColor = System.Drawing.Color.White;
+            this.btnCancelar.Location = new System.Drawing.Point(191, 228);
             this.btnCancelar.Name = "btnCancelar";
             this.btnCancelar.Size = new System.Drawing.Size(98, 44);
-            this.btnCancelar.TabIndex = 2;
+            this.btnCancelar.TabIndex = 3;
             this.btnCancelar.Text = "Cancelar";
-            this.btnCancelar.UseVisualStyleBackColor = true;
+            this.btnCancelar.UseVisualStyleBackColor = false;
+            this.btnCancelar.Click += new System.EventHandler(this.btnCancelar_Click);
             // 
             // txtDineroInicial
             // 
@@ -71,7 +82,9 @@
             this.txtDineroInicial.Location = new System.Drawing.Point(135, 160);
             this.txtDineroInicial.Name = "txtDineroInicial";
             this.txtDineroInicial.Size = new System.Drawing.Size(124, 26);
-            this.txtDineroInicial.TabIndex = 3;
+            this.txtDineroInicial.TabIndex = 1;
+            this.txtDineroInicial.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtDineroInicial_KeyDown);
+            this.txtDineroInicial.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtDineroInicial_KeyPress);
             // 
             // label2
             // 
@@ -104,7 +117,9 @@
             this.Controls.Add(this.btnCancelar);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.label1);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "frmIniciarCaja";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "frmIniciarCaja";
             this.ResumeLayout(false);
             this.PerformLayout();

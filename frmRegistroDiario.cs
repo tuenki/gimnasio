@@ -165,5 +165,10 @@ namespace xtremgym
         {
             Capturer.StopCapture();
         }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
     }
 }

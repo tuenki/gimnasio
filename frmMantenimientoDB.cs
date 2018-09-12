@@ -18,34 +18,50 @@ namespace xtremgym
 
         private void btnCrearReslpado_Click(object sender, EventArgs e)
         {
-            frmVerficarDedo VD = new frmVerficarDedo();
-            VD.IDUsuario = Program.IDUsuario;
-            if(VD.ShowDialog() == DialogResult.OK)
+            try
             {
-                FolderBrowserDialog FBD = new FolderBrowserDialog();
-                if(FBD.ShowDialog() == DialogResult.OK)
+                frmVerficarDedo VD = new frmVerficarDedo();
+                VD.IDUsuario = Program.IDUsuario;
+                if (VD.ShowDialog() == DialogResult.OK)
                 {
-                    try
+                    FolderBrowserDialog FBD = new FolderBrowserDialog();
+                    if (FBD.ShowDialog() == DialogResult.OK)
                     {
-                        string Dir = FBD.SelectedPath;
-                         
-                    }
-                    catch
-                    {
+                        try
+                        {
+                            string Dir = FBD.SelectedPath;
 
+                        }
+                        catch
+                        {
+
+                        }
                     }
                 }
+                else
+                {
+                    MessageBox.Show("Dedo incorrecto");
+                }
             }
-            else 
+            catch (Exception ex)
             {
-                MessageBox.Show("Dedo incorrecto");
+                MessageBox.Show("Ocurrio un error:" + ex.ToString(), "Error inesperado", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
+
         }
 
         private void btnSubirRespaldo_Click(object sender, EventArgs e)
         {
-            frmVeriTodasHuellas VTD = new frmVeriTodasHuellas();
-            VTD.ShowDialog();
+            try
+            {
+                frmVeriTodasHuellas VTD = new frmVeriTodasHuellas();
+                VTD.ShowDialog();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Ocurrio un error:" + ex.ToString(), "Error inesperado", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+
         }
 
         private void button1_Click(object sender, EventArgs e)

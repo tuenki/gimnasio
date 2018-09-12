@@ -20,11 +20,17 @@ namespace xtremgym
 
         private void btnNuevo_Click(object sender, EventArgs e)
         {
-            frmCliente FC = new frmCliente();
-            FC.Tipo = 1;
-            Close();
-            FC.ShowDialog();
-            
+            try
+            {
+                frmCliente FC = new frmCliente();
+                FC.Tipo = 1;
+                Close();
+                FC.ShowDialog();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Ocurrio un error:" + ex.ToString(), "Error inesperado", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
 
         private void btnCancelar_Click(object sender, EventArgs e)
@@ -34,9 +40,17 @@ namespace xtremgym
 
         private void btnExistente_Click(object sender, EventArgs e)
         {
-            groupBox1.Visible = false;
-            groupBox2.Visible = true;
-            ListaUsuarios();
+            try
+            {
+                groupBox1.Visible = false;
+                groupBox2.Visible = true;
+                ListaUsuarios();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Ocurrio un error:" + ex.ToString(), "Error inesperado", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            
         }
 
         private void btnCancelG2_Click(object sender, EventArgs e)
@@ -55,13 +69,19 @@ namespace xtremgym
 
         private void btnSigSelect_Click(object sender, EventArgs e)
         {
-            frmDatosUser FDU = new frmDatosUser();
-            FDU.Tipo = 1; // Madar ID
-            FDU.IDCliente = Convert.ToInt32(comboBox1.SelectedValue);
-            Close();
-            FDU.ShowDialog();
-            
-
+            try
+            {
+                frmDatosUser FDU = new frmDatosUser();
+                FDU.Tipo = 1; // Madar ID
+                FDU.IDCliente = Convert.ToInt32(comboBox1.SelectedValue);
+                Close();
+                FDU.ShowDialog();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Ocurrio un error:" + ex.ToString(), "Error inesperado", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+           
         }
 
         private void SelectNewUser_Load(object sender, EventArgs e)

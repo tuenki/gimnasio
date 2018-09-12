@@ -30,6 +30,7 @@ namespace xtremgym
         {
             InitializeComponent();
         }
+        //metodo cargar puestos
         private void CargarPuestos()
         {
             CDUsuario LCar = new CDUsuario();
@@ -40,65 +41,80 @@ namespace xtremgym
 
         private void frmDatosUser_Load(object sender, EventArgs e)
         {
-            CargarPuestos();
+            try
+            {
+                CargarPuestos();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Ocurrio un error:" + ex.ToString(), "Error inesperado", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+
         }
 
         private void btnGuardar_Click(object sender, EventArgs e)
         {
-
-            /*
-             * 0 = Nuevo usuario con nombre y huella
-             * 1 = Nuevo usuario existente
-             * 2 = Editar Login
-             * */
-            if(Tipo == 0)
+            try
             {
-                CNUsuario US = new CNUsuario();
-                US.Nombre = Nombre;
-                US.ApellidoP = ApellidoP;
-                US.ApellidoM = ApellidoM;
-                US.Usuario = txtUsuario.Text;
-                US.Contrasenia = txtPass.Text;
-                US.Cargo = Convert.ToInt32(comboOpcion.SelectedValue);
-                US.Huella = US.ConvertirHuellaAString(Template);
-                US.NuevoUsuarioLogin();
-                MessageBox.Show("Usuario creado correctamente");
-            }
-            else if(Tipo == 1)
-            {
-                CNUsuario US = new CNUsuario();
-                US.IDUsuario = IDCliente;
-                US.Usuario = txtUsuario.Text;
-                US.Contrasenia = txtPass.Text;
-                US.Cargo = Convert.ToInt32(comboOpcion.SelectedValue);
-                US.NuevoLogin();
-                MessageBox.Show("Usuario creado correctamente");
-            }
-            else if(Tipo == 2)
-            {
-                if (string.IsNullOrEmpty(txtPass.Text))
+                /*
+            * 0 = Nuevo usuario con nombre y huella
+            * 1 = Nuevo usuario existente
+            * 2 = Editar Login
+            * */
+                if (Tipo == 0)
                 {
-                    //No modifico contraseña
                     CNUsuario US = new CNUsuario();
-                    US.IDUsuario = IDCliente;
+                    US.Nombre = Nombre;
+                    US.ApellidoP = ApellidoP;
+                    US.ApellidoM = ApellidoM;
                     US.Usuario = txtUsuario.Text;
+                    US.Contrasenia = txtPass.Text;
                     US.Cargo = Convert.ToInt32(comboOpcion.SelectedValue);
-                    US.ActualizarLogin();
+                    US.Huella = US.ConvertirHuellaAString(Template);
+                    US.NuevoUsuarioLogin();
+                    MessageBox.Show("Usuario creado correctamente");
                 }
-                else
+                else if (Tipo == 1)
                 {
-                    // Modifico contraseña
                     CNUsuario US = new CNUsuario();
                     US.IDUsuario = IDCliente;
                     US.Usuario = txtUsuario.Text;
                     US.Contrasenia = txtPass.Text;
                     US.Cargo = Convert.ToInt32(comboOpcion.SelectedValue);
-                    US.ActualizarLoginConPass();
+                    US.NuevoLogin();
+                    MessageBox.Show("Usuario creado correctamente");
                 }
-                MessageBox.Show("Se Actualizo correctamente");
+                else if (Tipo == 2)
+                {
+                    if (string.IsNullOrEmpty(txtPass.Text))
+                    {
+                        //No modifico contraseña
+                        CNUsuario US = new CNUsuario();
+                        US.IDUsuario = IDCliente;
+                        US.Usuario = txtUsuario.Text;
+                        US.Cargo = Convert.ToInt32(comboOpcion.SelectedValue);
+                        US.ActualizarLogin();
+                    }
+                    else
+                    {
+                        // Modifico contraseña
+                        CNUsuario US = new CNUsuario();
+                        US.IDUsuario = IDCliente;
+                        US.Usuario = txtUsuario.Text;
+                        US.Contrasenia = txtPass.Text;
+                        US.Cargo = Convert.ToInt32(comboOpcion.SelectedValue);
+                        US.ActualizarLoginConPass();
+                    }
+                    MessageBox.Show("Se Actualizo correctamente");
+                }
+
+                Close();
             }
-            
-            Close();
+            catch (Exception ex)
+            {
+                MessageBox.Show("Ocurrio un error:" + ex.ToString(), "Error inesperado", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+           
         }
 
         private void btnCancelar_Click(object sender, EventArgs e)

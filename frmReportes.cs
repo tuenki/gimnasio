@@ -21,8 +21,8 @@ namespace xtremgym
         {
             frmMostrarReportes frmR = new frmMostrarReportes();
             frmR.fecha = Convert.ToDateTime(dateTimePicker1.Value);
-            //frmR.ShowDialog();
-            MessageBox.Show(Convert.ToDateTime(dateTimePicker1.Value.ToLongDateString()).ToString());
+            frmR.ShowDialog();
+            //MessageBox.Show(Convert.ToDateTime(dateTimePicker1.Value.ToLongDateString()).ToString());
         }
     }
 }

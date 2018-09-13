@@ -32,9 +32,9 @@ namespace xtremgym
                             string Dir = FBD.SelectedPath;
 
                         }
-                        catch
+                        catch(Exception EX)
                         {
-
+                            MessageBox.Show("ERROR: "+EX.ToString(),"Error en tomar direccion",MessageBoxButtons.OK,MessageBoxIcon.Error);
                         }
                     }
                 }
@@ -45,7 +45,7 @@ namespace xtremgym
             }
             catch (Exception ex)
             {
-                MessageBox.Show("Ocurrio un error:" + ex.ToString(), "Error inesperado", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Ocurrio un error:" + ex.ToString(), "Error inesperado en metodo crear", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
 
         }

@@ -47,6 +47,8 @@
             this.iconClose = new System.Windows.Forms.PictureBox();
             this.panelContainer = new System.Windows.Forms.Panel();
             this.HoraFEcha = new System.Windows.Forms.Timer(this.components);
+            this.label1 = new System.Windows.Forms.Label();
+            this.lbEsclavo = new System.Windows.Forms.Label();
             this.menuVertical.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.barraTitulo.SuspendLayout();
@@ -59,6 +61,8 @@
             // menuVertical
             // 
             this.menuVertical.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(122)))), ((int)(((byte)(204)))));
+            this.menuVertical.Controls.Add(this.lbEsclavo);
+            this.menuVertical.Controls.Add(this.label1);
             this.menuVertical.Controls.Add(this.btnInicio);
             this.menuVertical.Controls.Add(this.button1);
             this.menuVertical.Controls.Add(this.lavelDate);
@@ -113,7 +117,7 @@
             this.lavelDate.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.lavelDate.AutoSize = true;
             this.lavelDate.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lavelDate.Location = new System.Drawing.Point(42, 555);
+            this.lavelDate.Location = new System.Drawing.Point(109, 560);
             this.lavelDate.Name = "lavelDate";
             this.lavelDate.Size = new System.Drawing.Size(51, 20);
             this.lavelDate.TabIndex = 6;
@@ -124,7 +128,7 @@
             this.lavelTime.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.lavelTime.AutoSize = true;
             this.lavelTime.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lavelTime.Location = new System.Drawing.Point(41, 513);
+            this.lavelTime.Location = new System.Drawing.Point(12, 553);
             this.lavelTime.Name = "lavelTime";
             this.lavelTime.Size = new System.Drawing.Size(79, 29);
             this.lavelTime.TabIndex = 5;
@@ -293,6 +297,26 @@
             this.HoraFEcha.Enabled = true;
             this.HoraFEcha.Tick += new System.EventHandler(this.HoraFEcha_Tick);
             // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(13, 506);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(100, 24);
+            this.label1.TabIndex = 9;
+            this.label1.Text = "Vinvenido:";
+            // 
+            // lbEsclavo
+            // 
+            this.lbEsclavo.AutoSize = true;
+            this.lbEsclavo.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbEsclavo.Location = new System.Drawing.Point(119, 506);
+            this.lbEsclavo.Name = "lbEsclavo";
+            this.lbEsclavo.Size = new System.Drawing.Size(79, 24);
+            this.lbEsclavo.TabIndex = 10;
+            this.lbEsclavo.Text = "Nombre";
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -342,6 +366,8 @@
         private System.Windows.Forms.Timer HoraFEcha;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Button btnInicio;
+        private System.Windows.Forms.Label lbEsclavo;
+        private System.Windows.Forms.Label label1;
     }
 }
 

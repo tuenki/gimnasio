@@ -49,6 +49,7 @@ namespace xtremgym
                         {
                             this.Hide();
                             Program.IDUsuario =Convert.ToInt32(Logear["IDUsuario"]);
+                            Program.NomUse = Convert.ToString(Logear["UserName"]);
                             //Form1 frm1 = new Form1();
                             //frm1.Show();
                             frmIniciarCaja InitCaja = new frmIniciarCaja();

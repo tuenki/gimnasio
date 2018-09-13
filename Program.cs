@@ -13,6 +13,7 @@ namespace xtremgym
         public static double DineroInicial;
         public static double DineroSuma;
         public static DateTime FechaInicio;
+        public static string NomUse;
         /// <summary>
         /// The main entry point for the application.
         /// </summary>

@@ -121,6 +121,7 @@
             this.btnCancelG2.TabIndex = 2;
             this.btnCancelG2.Text = "Regresar";
             this.btnCancelG2.UseVisualStyleBackColor = false;
+            this.btnCancelG2.Click += new System.EventHandler(this.btnCancelG2_Click);
             // 
             // btnSigSelect
             // 
@@ -135,6 +136,7 @@
             this.btnSigSelect.TabIndex = 1;
             this.btnSigSelect.Text = "Siguiente";
             this.btnSigSelect.UseVisualStyleBackColor = false;
+            this.btnSigSelect.Click += new System.EventHandler(this.btnSigSelect_Click);
             // 
             // comboBox1
             // 

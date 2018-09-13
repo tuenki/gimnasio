@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
-using System.Drawing;
+using System.Drawing.Printing;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -16,7 +16,7 @@ namespace xtremgym
     public partial class frmPagos : Form
     {
         public int IDCliente;
-        public int Suscripcion = 1;
+        public int Suscripcion = 0;
 
         private double costo;
         private double Cambio;
@@ -65,8 +65,9 @@ namespace xtremgym
                         Sus.Dias = Convert.ToInt32(txtDias.Text);
                         Sus.NuevaSuscrip();
                         orec.InsertarRecibo();
+                        PrintTicket();
                     }
-                    MessageBox.Show("El cambio es:" + Cambio.ToString());
+                    MessageBox.Show("El cambio es: " + Cambio.ToString());
 
                 }
                 
@@ -86,6 +87,7 @@ namespace xtremgym
         {
             try
             {
+                PopulateInstalledPrintersCombo();
                 CargarCombo();
             }
             catch (Exception ex)
@@ -124,39 +126,19 @@ namespace xtremgym
             {
                 MessageBox.Show("Ocurrio un error:" + ex.ToString(), "Seleccion CBX", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
-
-            /* if(Row[0][3].ToString() == "Dias")
-             {
-                 txtDias.Text = "";
-                 txtDias.Enabled = true;
-             }
-             else if (Row[0][3].ToString() == "Semana")
-             {
-                 txtDias.Text = "7";
-                 txtDias.Enabled = false;
-             }
-             else if (Row[0][3].ToString() == "Mes")
-             {
-                 txtDias.Text = "31";
-                 txtDias.Enabled =false;
-             }
-             else if (Row[0][3].ToString() == "Año")
-             {
-                 txtDias.Text = "365";
-                 txtDias.Enabled = false;
-             }*/
-
         }
         private void PrintTicket()
         {
-            string nombreE = "Fernando DAniel";//el usaurio que atiende en turno va en el recibo
+            
+            string nombreE = Program.NomUse;//el usaurio que atiende en turno va en el recibo
 
             //el nombre del cliente y su ID igual
             string idcleinte =IDCliente.ToString();
 
             string precio = costo.ToString();//Las cantidades y la operacion de dar el cambio TOTAL=recibio-precio
-            string recibio = txtPago.ToString();
+            string recibio = txtPago.Text;
             string camb = Cambio.ToString();
+            double dias = Convert.ToDouble(txtDias.Text);
 
 
             //aqui se arman las cadenas 
@@ -182,23 +164,23 @@ namespace xtremgym
             ticket.AddSubHeaderLine(nombreC.ToString());//id del cliente
 
 
-            ticket.AddItem("1", "Membrecia", "CostoM");//Aqui va: cantidad - nombre membrecia - costo membresia
+            ticket.AddItem("1", comboBox1.Text, "$ "+precio);//Aqui va: cantidad - nombre membrecia - costo membresia
             ticket.AddItem("", "", "");
-            ticket.AddItem("", "Expiracion el 20 de agosto", "");//fecha de expiracion
+            ticket.AddItem("", "Expira: "+DateTime.Now.AddDays(dias).ToShortDateString(), "");//fecha de expiracion
 
-            ticket.AddTotal("SUBTOTAL", precio);//precio membresia
+            ticket.AddTotal("SUBTOTAL", "$ "+precio);//precio membresia
             ticket.AddTotal("IVA", "0");
-            ticket.AddTotal("TOTAL", precio);//precio membresia
+            ticket.AddTotal("TOTAL", "$ "+precio);//precio membresia
             ticket.AddTotal("", "");
-            ticket.AddTotal("RECIBIDO", recibio);//dinero que recibio
+            ticket.AddTotal("RECIBIDO", "$ "+recibio);//dinero que recibio
             ticket.AddTotal("CAMBIO", Cambio.ToString());//Cambio que se dio
             ticket.AddTotal("", "");
 
             ticket.AddFooterLine("La membresia es intrasferible, no esta sujeta a devolucion y le da derecho a una visita por dia");
             ticket.AddFooterLine("");
-            ticket.AddFooterLine("GRACIAS POR SU VISITA!");
+            ticket.AddFooterLine("GRACIAS POR SU PREFERENCIA!");
 
-            ticket.PrintTicket("HP LaserJet P3005 UPD PCL 6");//es importante saber el nombre de la impresora
+            ticket.PrintTicket(cbxImp.SelectedItem.ToString());//es importante saber el nombre de la impresora
         }
 
         private void txtPago_KeyPress(object sender, KeyPressEventArgs e)
@@ -212,5 +194,30 @@ namespace xtremgym
 
             }*/
         }
+        private void PopulateInstalledPrintersCombo()
+        {
+            // Add list of installed printers found to the combo box.
+            // The pkInstalledPrinters string will be used to provide the display string.
+            String pkInstalledPrinters;
+            for (int i = 0; i < PrinterSettings.InstalledPrinters.Count; i++)
+            {
+                pkInstalledPrinters = PrinterSettings.InstalledPrinters[i];
+                cbxImp.Items.Add(pkInstalledPrinters);
+            }
+        }
+        private void cbxImp_SelectionChanged(object sender, System.EventArgs e)
+        {
+
+            // Set the printer to a printer in the combo box when the selection changes.
+
+            if (cbxImp.SelectedIndex != -1)
+            {
+                // The combo box's Text property returns the selected item's text, which is the printer name.
+                PrintDocument printDoc = new PrintDocument();
+                printDoc.PrinterSettings.PrinterName = cbxImp.Text;
+            }
+
+        }
+
     }
 }

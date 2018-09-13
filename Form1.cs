@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Runtime.InteropServices;
 using GYMNegocio;
+using System.Data.SqlClient;
 
 namespace xtremgym
 {
@@ -154,6 +155,10 @@ namespace xtremgym
         {
             try
             {
+                
+                // Program.NomUse = Convert.ToString(Logear["UserName"]);
+                lbEsclavo.Text = Program.NomUse;
+           
                 AbrirFormInPanel(new frmRegistroDiario());
             }
             catch (Exception ex)

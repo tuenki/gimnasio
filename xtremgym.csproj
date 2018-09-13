@@ -60,9 +60,11 @@
       <SpecificVersion>False</SpecificVersion>
       <HintPath>bin\Debug\LibPrintTicket.dll</HintPath>
     </Reference>
-    <Reference Include="MySql.Data, Version=8.0.11.0, Culture=neutral, PublicKeyToken=c5687fc88969c44d, processorArchitecture=MSIL" />
+    <Reference Include="Microsoft.ReportViewer.Common, Version=12.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91" />
+    <Reference Include="Microsoft.ReportViewer.WinForms, Version=12.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL" />
     <Reference Include="System" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Web.Services" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -74,10 +76,10 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="DataSetReport.Designer.cs">
+    <Compile Include="DataSetReporte.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>DataSetReport.xsd</DependentUpon>
+      <DependentUpon>DataSetReporte.xsd</DependentUpon>
     </Compile>
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>
@@ -120,6 +122,12 @@
     </Compile>
     <Compile Include="frmMembresia.Designer.cs">
       <DependentUpon>frmMembresia.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmMostrarReportes.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmMostrarReportes.Designer.cs">
+      <DependentUpon>frmMostrarReportes.cs</DependentUpon>
     </Compile>
     <Compile Include="frmNusuarios.cs">
       <SubType>Form</SubType>
@@ -198,6 +206,9 @@
     <EmbeddedResource Include="frmMembresia.resx">
       <DependentUpon>frmMembresia.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="frmMostrarReportes.resx">
+      <DependentUpon>frmMostrarReportes.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="frmNusuarios.resx">
       <DependentUpon>frmNusuarios.cs</DependentUpon>
     </EmbeddedResource>
@@ -231,18 +242,20 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="ReporteF.rdlc" />
     <EmbeddedResource Include="SelectNewUser.resx">
       <DependentUpon>SelectNewUser.cs</DependentUpon>
     </EmbeddedResource>
-    <None Include="DataSetReport.xsc">
-      <DependentUpon>DataSetReport.xsd</DependentUpon>
+    <None Include="DataSetReporte.xsc">
+      <DependentUpon>DataSetReporte.xsd</DependentUpon>
     </None>
-    <None Include="DataSetReport.xsd">
+    <None Include="DataSetReporte.xsd">
+      <SubType>Designer</SubType>
       <Generator>MSDataSetGenerator</Generator>
-      <LastGenOutput>DataSetReport.Designer.cs</LastGenOutput>
+      <LastGenOutput>DataSetReporte.Designer.cs</LastGenOutput>
     </None>
-    <None Include="DataSetReport.xss">
-      <DependentUpon>DataSetReport.xsd</DependentUpon>
+    <None Include="DataSetReporte.xss">
+      <DependentUpon>DataSetReporte.xsd</DependentUpon>
     </None>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>

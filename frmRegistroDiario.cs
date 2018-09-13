@@ -194,5 +194,20 @@ namespace xtremgym
         {
             this.Close();
         }
+
+        private void button1_Click_1(object sender, EventArgs e)
+        {
+           /* try
+            {
+                CNSuscripcion Sus = new CNSuscripcion();
+                Sus.IDCliente = Convert.ToInt32(textBox1.Text);
+                Sus.InsertaRegistroDiario();
+            }
+            catch(Exception ex)
+            {
+                MessageBox.Show("Error: " + ex.ToString(), "Error en el boton registro", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }*/
+           
+        }
     }
 }

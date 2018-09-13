@@ -23,6 +23,7 @@ namespace xtremgym
 
             SelectNewUser SNU = new SelectNewUser();
             SNU.ShowDialog();
+            CargarClientes();
             /*frmNusuarios frmu = new frmNusuarios();
             frmu.ListaCargo();
             frmu.ShowDialog();*/
@@ -42,7 +43,7 @@ namespace xtremgym
                     FDUM.txtUsuario.Text = dataGridView1.CurrentRow.Cells[3].Value.ToString();
                     FDUM.comboOpcion.Text = dataGridView1.CurrentRow.Cells[4].Value.ToString();
                     FDUM.ShowDialog();
-
+                    CargarClientes();
 
                     /* //Editar
                      frmNusuarios frmu = new frmNusuarios();
@@ -104,6 +105,7 @@ namespace xtremgym
                     CDUsuario ObjE = new CDUsuario();
                     ObjE.IDUsuario = Convert.ToInt32(dataGridView1.CurrentRow.Cells[0].Value);
                     ObjE.EliminarLogin();
+                    CargarClientes();
 
                 }
             }

@@ -66,6 +66,7 @@
     <Compile Include="CNSuscripcion.cs" />
     <Compile Include="CNUsuario.cs" />
     <Compile Include="CNMembresia.cs" />
+    <Compile Include="Mantenimiento.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

@@ -204,6 +204,11 @@ namespace GYMNegocio
             }
             return TemLis;
         }
-        
+        public void EliminarCliente()
+        {
+            objDato.IDCliente = IDCliente;
+            objDato.EliminarCliente();
+        }
+
     }
 }

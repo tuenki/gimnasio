@@ -38,31 +38,11 @@ namespace xtremgym
         }
         private void Checar()
         {
-            if (radioButton1.Checked == true)
-            {
-                // Existente
-                ListaUsuarios();
-                GExistente.Visible = true;
-                GNuevo.Visible = false;
-                txtuser.ReadOnly = false;
-                txtpwd.ReadOnly = false;
-
-            }
-            else if (radioButton1.Checked == false)
-            {
-                GExistente.Visible = false;
-                GNuevo.Visible = true;
-                txtuser.ReadOnly = false;
-                txtpwd.ReadOnly = false;
-
-            }
+            
         }
         private void ListaUsuarios()
         {
-            CDUsuario LUs = new CDUsuario();
-            CBNombre.DataSource = LUs.ListaUsuarios();
-            CBNombre.DisplayMember = "Nombre";
-            CBNombre.ValueMember = "IDUsuario";
+           
 
         }
         
@@ -71,22 +51,6 @@ namespace xtremgym
 
         private void button1_Click(object sender, EventArgs e)
         {
-            if(radioButton1.Checked)
-            {
-                // Existente
-                //NuevoLogin();
-                MessageBox.Show("Nuevo Existente");
-            }
-            else if(radioButton2.Checked)
-            {
-                //NuevoUsuarioLog();
-                MessageBox.Show("Nuevo NO Existente");
-            }
-            else if (Editar == 1)
-            {
-                //editar
-                MessageBox.Show("Editar");
-            }
             
         }
 
@@ -96,33 +60,20 @@ namespace xtremgym
         }
         public void ListaCargo()
         {
-            CDUsuario LCar = new CDUsuario();
-            CBCargo.DataSource = LCar.ListaCargos();
-            CBCargo.DisplayMember = "NombreCargo";
-            CBCargo.ValueMember = "IDCargo";
+            
         }
         private void NuevoLogin()
         {
-            ObjUs.IDUsuario = Convert.ToInt32(CBNombre.SelectedValue);
-            ObjUs.Cargo = Convert.ToInt32(CBCargo.SelectedValue);
-            ObjUs.Usuario = txtuser.Text;
-            ObjUs.Contrasenia = txtpwd.Text;
-            ObjUs.NuevoLogin();
+            
         }
         private void NuevoUsuarioLog()
         {
-            ObjUs.Nombre = txtNombre.Text;
-            ObjUs.ApellidoP = txtApellidoP.Text;
-            ObjUs.ApellidoM = txtApellidoM.Text;
-            ObjUs.Cargo = Convert.ToInt32(CBCargo.SelectedValue);
-            ObjUs.Usuario = txtuser.Text;
-            ObjUs.Contrasenia = txtpwd.Text;
-            ObjUs.NuevoUsuarioLogin();
+            
         }
 
         private void radioButton2_CheckedChanged(object sender, EventArgs e)
         {
-            Checar();
+            
         }
 
         private void btnExistente_Click(object sender, EventArgs e)
@@ -132,10 +83,7 @@ namespace xtremgym
 
         private void btnNuevo_Click(object sender, EventArgs e)
         {
-            frmCliente FMC = new frmCliente();
-            this.Hide();
-            FMC.Tipo = 1;
-            FMC.ShowDialog();
+    
         }
     }
 }

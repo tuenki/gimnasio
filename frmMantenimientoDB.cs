@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using GYMNegocio;
 namespace xtremgym
 {
     public partial class frmMantenimientoDB : Form
@@ -24,19 +25,23 @@ namespace xtremgym
                 VD.IDUsuario = Program.IDUsuario;
                 if (VD.ShowDialog() == DialogResult.OK)
                 {
-                    FolderBrowserDialog FBD = new FolderBrowserDialog();
-                    if (FBD.ShowDialog() == DialogResult.OK)
-                    {
+                   
                         try
                         {
-                            string Dir = FBD.SelectedPath;
+                            Mantenimiento Man = new Mantenimiento();
+                            
+                            string Dir = "C:\\respaldo";
+                            Man.Direccion = Dir;
+                            Man.CrearRespaldo();
+                            MessageBox.Show("Reslpado hecho");
+
 
                         }
                         catch(Exception EX)
                         {
                             MessageBox.Show("ERROR: "+EX.ToString(),"Error en tomar direccion",MessageBoxButtons.OK,MessageBoxIcon.Error);
                         }
-                    }
+                    
                 }
                 else
                 {
@@ -54,12 +59,37 @@ namespace xtremgym
         {
             try
             {
-                frmVeriTodasHuellas VTD = new frmVeriTodasHuellas();
-                VTD.ShowDialog();
+                frmVerficarDedo VD = new frmVerficarDedo();
+                VD.IDUsuario = Program.IDUsuario;
+                if (VD.ShowDialog() == DialogResult.OK)
+                {
+                    //FolderBrowserDialog FBD = new FolderBrowserDialog();
+                    OpenFileDialog Opn = new OpenFileDialog();
+                    Opn.Filter = "Bak files (*.bak) | *.bak";
+                    if (Opn.ShowDialog() == DialogResult.OK)
+                    {
+                        try
+                        {
+                            Mantenimiento Man = new Mantenimiento();
+                            string Dir = Opn.FileName;
+                            Man.Direccion = Dir;
+                            Man.SubirRespaldo();
+                            MessageBox.Show("Base de datos restaurada");
+                        }
+                        catch (Exception EX)
+                        {
+                            MessageBox.Show("ERROR: " + EX.ToString(), "Error en tomar direccion", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        }
+                    }
+                }
+                else
+                {
+                    MessageBox.Show("Dedo incorrecto");
+                }
             }
             catch (Exception ex)
             {
-                MessageBox.Show("Ocurrio un error:" + ex.ToString(), "Error inesperado", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Ocurrio un error:" + ex.ToString(), "Error inesperado en metodo crear", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
 
         }

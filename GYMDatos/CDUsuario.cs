@@ -218,21 +218,11 @@ namespace GYMDatos
             Conexion.CerrarConexion();
             return Tabla;
         }
-        public void CrearRespaldoDB()
+        public void EliminarCliente()
         {
-            Comando = new SqlCommand("Backupdb", Conexion.AbrirConexion());
+            Comando = new SqlCommand("EliminarCliente", Conexion.AbrirConexion());
             Comando.CommandType = CommandType.StoredProcedure;
-            Comando.Parameters.AddWithValue("@Direccion",Direccion);
-            Comando.Parameters.AddWithValue("@NameDB",DBConexion.NombreDB);
-            Comando.ExecuteNonQuery();
-            Conexion.CerrarConexion();
-        }
-        public void SubirRespaldoDB()
-        {
-            Comando = new SqlCommand("RestortoreDB", Conexion.AbrirConexion());
-            Comando.CommandType = CommandType.StoredProcedure;
-            Comando.Parameters.AddWithValue("@Direccion", Direccion);
-            Comando.Parameters.AddWithValue("@NameDB", DBConexion.NombreDB);
+            Comando.Parameters.AddWithValue("@ID", IDCliente);
             Comando.ExecuteNonQuery();
             Conexion.CerrarConexion();
         }

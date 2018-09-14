@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using GYMDatos;
+using GYMNegocio;
 
 namespace xtremgym
 {
@@ -92,11 +93,17 @@ namespace xtremgym
             {
                 if (dataGridView1.SelectedRows.Count > 0)
                 {
-
+                    if (MessageBox.Show("Estas seguro de eliminar este usuario? \n Se eliminara todo lo relacionado a este usuario", "Eliminar", MessageBoxButtons.YesNo) == DialogResult.Yes)
+                    {
+                        CNUsuario Ob = new CNUsuario();
+                        Ob.IDCliente = Convert.ToInt32(dataGridView1.CurrentRow.Cells["IDUsuario"].Value);
+                        Ob.EliminarCliente();
+                        MessageBox.Show("Se elimino el cliente correctamente");
+                    }
                 }
                 else
                 {
-                    MessageBox.Show("Selecciona un usuario para editar");
+                    MessageBox.Show("Selecciona un usuario para eliminar");
                 }
             }
             catch (Exception ex)

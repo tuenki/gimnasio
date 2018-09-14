@@ -117,4 +117,16 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="label2.Text" xml:space="preserve">
+    <value>Develop AP es una empresa que se encarga del 
+desarrollo de cualquiere proyecto informatico.
+
+Desarrollo de sistemas para escritorio.
+Desarrollo de sistemas web.
+Desarrollo de aplicaciones movil.
+
+Cualquier proyecto en sistemas computacionales.
+
+Dudas contactar: Juan Carlos Caciano.</value>
+  </data>
 </root>

@@ -41,6 +41,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="CDCaja.cs" />
+    <Compile Include="CDMantenimiento.cs" />
     <Compile Include="CDSuscripcion.cs" />
     <Compile Include="CDUsuario.cs" />
     <Compile Include="CDMembresia.cs" />

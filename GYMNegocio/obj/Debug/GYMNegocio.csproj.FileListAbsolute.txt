@@ -20,3 +20,10 @@ C:\Users\carlos\Desktop\gym\xtremgym\monroy-descompuesto\gimnasio-master\GYMNego
 C:\Users\carlos\Desktop\gym\xtremgym\monroy-descompuesto\gimnasio-master\GYMNegocio\obj\Debug\GYMNegocio.csprojResolveAssemblyReference.cache
 C:\Users\carlos\Desktop\gym\xtremgym\monroy-descompuesto\gimnasio-master\GYMNegocio\obj\Debug\GYMNegocio.dll
 C:\Users\carlos\Desktop\gym\xtremgym\monroy-descompuesto\gimnasio-master\GYMNegocio\obj\Debug\GYMNegocio.pdb
+C:\Users\Novato\Desktop\Proyecto\ddd\gimnasio\GYMNegocio\bin\Debug\GYMNegocio.dll
+C:\Users\Novato\Desktop\Proyecto\ddd\gimnasio\GYMNegocio\bin\Debug\GYMNegocio.pdb
+C:\Users\Novato\Desktop\Proyecto\ddd\gimnasio\GYMNegocio\bin\Debug\GYMDatos.dll
+C:\Users\Novato\Desktop\Proyecto\ddd\gimnasio\GYMNegocio\bin\Debug\GYMDatos.pdb
+C:\Users\Novato\Desktop\Proyecto\ddd\gimnasio\GYMNegocio\obj\Debug\GYMNegocio.csprojResolveAssemblyReference.cache
+C:\Users\Novato\Desktop\Proyecto\ddd\gimnasio\GYMNegocio\obj\Debug\GYMNegocio.dll
+C:\Users\Novato\Desktop\Proyecto\ddd\gimnasio\GYMNegocio\obj\Debug\GYMNegocio.pdb

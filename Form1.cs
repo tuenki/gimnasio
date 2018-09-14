@@ -218,6 +218,18 @@ namespace xtremgym
             }
             base.WndProc(ref msj);
         }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            frmNusuarios frmn = new frmNusuarios();
+            frmn.Show();
+        }
+
         //metodo para cerrar form abierto
         private void FormAbierto()
         {
